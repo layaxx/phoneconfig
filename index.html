@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            overflow-y: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .column {
+            flex: 25.00%;
+            padding: 90px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            min-width: 200px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+            cursor: pointer;
+        }
+
+        .name {
+            padding: 1px;
+        }
+
+        .description {
+            padding: 1px;
+            display: none;
+        }
+
+        #card1:hover #des1 {
+            display: block;
+        }
+
+        #card2:hover #des2 {
+            display: block;
+        }
+
+        #card3:hover #des3 {
+            display: block;
+        }
+
+        #card4:hover #des4 {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="text-align:center">Choose your starting point!</h1>
+
+    <div class="row">
+        <div class="column">
+            <div class="card" id="card1" onclick="window.location='configurator.html#adventure';">
+                <div class="name">
+                    <h1>Adventure</h1>
+                </div>
+                <img src="/media/smartphone_adventurer.png" alt="Adventure" style="width:100%">
+                <div class="description" id="des1">
+                    <p>
+                        <b>
+                            Wasserdichtes Smartphone f&uuml;r die Abenteurer
+                        </b>
+                    </p>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card" id="card2" onclick="window.location='configurator.html#photophone';">
+                <div class="name">
+                    <h1>Photophone</h1>
+                </div>
+                <img src="media/smartphone_photophone.png" alt="Photophone" style="width:100%">
+                <div class="description" id="des2">
+                    <p>
+                        <b>
+                            Smartphone mit viel Speicher und guter Kamera f&uuml;r Fotografiebegeisterte
+                        </b>
+                    </p>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card" id="card3" onclick="window.location='configurator.html#business';">
+                <div class="name">
+                    <h1>Business</h1>
+                </div>
+                <img src="media/smartphone_business.png" alt="Business" style="width:100%">
+                <div class="description" id="des3">
+                    <p>
+                        <b>
+                            Zuverl&auml;ssiges Smartphone mit besonders langer Akkulaufzeit um immer erreichbar zu sein
+                        </b>
+                    </p>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card" id="card4" onclick="window.location='configurator.html#gaming';">
+                <div class="name">
+                    <h1>Gaming</h1>
+                </div>
+                <img src="media/smartphone_gaming.png" alt="Gaming" style="width:100%">
+                <div class="description" id="des4">
+                    <p>
+                        <b>
+                            Leistungsf&auml;higes Smartphone mit langer Akkulaufzeit f&uuml;r viele Stunden Gamingspa&szlig;
+                        </b>
+                    </p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

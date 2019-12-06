@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    .options_l {
+        width: 24%;
+        height: 500px;
+        background-color: #dddde0;
+        overflow: auto;
+        float: right;
+        margin-right: 20px;
+        margin-top: 150px;
+    }
+
+    .options_r {
+        width: 24%;
+        height: 500px;
+        background-color: #dddde0;
+        overflow: auto;
+        float: right;
+        margin-right: 220px;
+        margin-top: 150px;
+    }
+
+    .colors {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 60px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .colors_name {
+        text-align: center;
+    }
+
+
+    .navbar {
+        width: 73%;
+        background-color: #555;
+        overflow: auto;
+        float: right;
+    }
+
+    .navbar a {
+        float: left;
+        padding: 15px;
+        color: white;
+        text-decoration: none;
+        font-size: 25px;
+        margin-right: 10px;
+    }
+
+    .navbar a:hover {
+        background-color: #000;
+    }
+
+    .active {
+        background-color: #4CAF50;
+    }
+
+    @media screen and (max-width: 500px) {
+        .navbar a {
+            float: none;
+            display: block;
+        }
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <a class="active" href="#">Camera</a>
+        <a href="#">Design</a>
+        <a href="#">Performance</a>
+        <a href="#">Extras</a>
+        <a href="#" style="float:right">Cart</a>
+    </div>
+    <div class="options_r">
+        <h2 style="text-align:center">Shape:</h2>
+        <hr />
+        <img src="media/pre_r_black.png" width="25%" style="margin-left: 175px;">
+        <br />
+        <img src="media/pre_h_black.png" width="25%" style="margin-left: 175px;">
+    </div>
+
+    <div class="options_l">
+        <h2 style="text-align:center">Color:</h2>
+        <hr />
+
+        <div style="width: 50%; float: left;">
+            <div class="colors" style="background-color: black;"></div>
+            <div class="colors_name">
+                <h2>Black</h2>
+            </div>
+            <div class="colors" style="background-color: red;"></div>
+            <div class="colors_name">
+                <h2>Red</h2>
+            </div>
+        </div>
+
+        <div style="width: 50%; float: right;">
+            <div class="colors" style="background-color: white;"></div>
+            <div class="colors_name">
+                <h2>white</h2>
+            </div>
+            <div class="colors" style="background-color: blue;"></div>
+            <div class="colors_name">
+                <h2>blue</h2>
+            </div>
+        </div>
+    </div>
+
+    <img src="media/pre_h_red.png" style="width:27%">
+</body>
+
+</html>

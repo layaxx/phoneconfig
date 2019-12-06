@@ -1,73 +1,83 @@
 <!DOCTYPE html>
 <html>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-    .options_l {
-        width: 24%;
-        height: 500px;
-        background-color: #dddde0;
-        overflow: auto;
-        float: right;
-        margin-right: 20px;
-        margin-top: 150px;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Config</title>
+    <!--   3D Preview based on a Tutorial by Codrops, although altered:
+    https://tympanus.net/codrops/2019/09/17/how-to-build-a-color-customizer-app-for-a-3d-model-with-three-js/
+    -->
 
-    .options_r {
-        width: 24%;
-        height: 500px;
-        background-color: #dddde0;
-        overflow: auto;
-        float: right;
-        margin-right: 220px;
-        margin-top: 150px;
-    }
-
-    .colors {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 60px;
-        width: 80px;
-        height: 80px;
-    }
-
-    .colors_name {
-        text-align: center;
-    }
-
-
-    .navbar {
-        width: 73%;
-        background-color: #555;
-        overflow: auto;
-        float: right;
-    }
-
-    .navbar a {
-        float: left;
-        padding: 15px;
-        color: white;
-        text-decoration: none;
-        font-size: 25px;
-        margin-right: 10px;
-    }
-
-    .navbar a:hover {
-        background-color: #000;
-    }
-
-    .active {
-        background-color: #4CAF50;
-    }
-
-    @media screen and (max-width: 500px) {
-        .navbar a {
-            float: none;
-            display: block;
+    <style>
+        .options_l {
+            width: 24%;
+            height: 500px;
+            background-color: #dddde0;
+            overflow: auto;
+            float: right;
+            margin-right: 20px;
+            margin-top: 150px;
         }
-    }
-</style>
+
+        .options_r {
+            width: 24%;
+            height: 500px;
+            background-color: #dddde0;
+            overflow: auto;
+            float: right;
+            margin-right: 220px;
+            margin-top: 150px;
+        }
+
+        .colors {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 60px;
+            width: 80px;
+            height: 80px;
+        }
+
+        .colors_name {
+            text-align: center;
+        }
+
+
+        .navbar {
+            width: 73%;
+            background-color: #555;
+            overflow: auto;
+            float: right;
+        }
+
+        .navbar a {
+            float: left;
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 25px;
+            margin-right: 10px;
+        }
+
+        .navbar a:hover {
+            background-color: #000;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+        @media screen and (max-width: 500px) {
+            .navbar a {
+                float: none;
+                display: block;
+            }
+        }
+    </style>
+</head>
 
 <body>
     <div class="navbar">
@@ -124,8 +134,8 @@
     <!-- This is a simple to use extension for Three.js that activates all the rotating, dragging and zooming controls we need for both mouse and touch, there isn't a clear CDN for this that I can find -->
     <script src='https://threejs.org/examples/js/controls/OrbitControls.js'></script>
 
-  <!--   Load the JS-Script that loads and renders the 3d Preview -->
-  <script src='preview.js'></script>
+    <!--   Load the JS-Script that loads and renders the 3d Preview -->
+    <script src='preview.js'></script>
 </body>
 
 </html>

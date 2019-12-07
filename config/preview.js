@@ -6,7 +6,7 @@ const canvas = document.querySelector('#c');
 
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 
-const WIDTH = innerWidth * 0.29;
+const WIDTH = innerWidth * 0.30;
 const HEIGHT = innerHeight;
 var frameCount = 0;
 

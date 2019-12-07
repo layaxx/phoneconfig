@@ -6,7 +6,7 @@
     <meta name="viewport"
         content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Config - cam</title>
+    <title>Config - extras</title>
     <!--   3D Preview based on a Tutorial by Codrops, although altered:
     https://tympanus.net/codrops/2019/09/17/how-to-build-a-color-customizer-app-for-a-3d-model-with-three-js/
     -->
@@ -79,42 +79,37 @@
     </div>
 
 
-    <div id="cam" class="options_r" style="width:48%;">
-        <h1 style="text-align:center">Choose a front and a back camera!</h1>
+    <div id="extras" class="options_r" style="width:48%;">
+        <h1 style="text-align:center">Costumize everything else!</h1>
         <hr />
-        <br />
-        <table style="width:100%; text-align: center; font-size: larger;">
-            <tr>
-                <th style="text-align: right;">Backcamera</th>
-                <th></th>
-                <th style="text-align: left;">Frontcamera</th>
-            </tr>
-            <tr>
-                <td style="text-align: right;"><input name="cam_r" id="cam_0_l" type="radio"></td>
-                <td style="width: 17%;">No Camera</td>
-                <td style="text-align: left;"><input name="cam_l" id="cam_0_r" type="radio"></td>
-            </tr>
-            <tr>
-                <td style="text-align: right;"><input name="cam_r" id="cam_1_l" type="radio"></td>
-                <td>8 MP</td>
-                <td style="text-align: left;"><input name="cam_l" id="cam_1_r" type="radio"></td>
-            </tr>
-            <tr>
-                <td style="text-align: right;"><input name="cam_r" id="cam_2_l" type="radio"></td>
-                <td>10 MP</td>
-                <td style="text-align: left;"><input name="cam_l" id="cam_2_r" type="radio"></td>
-            </tr>
-            <tr>
-                <td style="text-align: right;"><input name="cam_r" id="cam_3_l" type="radio"></td>
-                <td>12 MP</td>
-                <td style="text-align: left;"><input name="cam_l" id="cam_3_r" type="radio"></td>
-            </tr>
-            <tr>
-                <td style="text-align: right;"><input name="cam_r" id="cam_4_l" type="radio"></td>
-                <td>14 MP</td>
-                <td style="text-align: left;"><input name="cam_l" id="cam_4_r" type="radio"></td>
-            </tr>
-        </table>
+        <div style="float: left; width: 33%;">
+            <h2 style="text-align:center;">Operating System</h2>
+            <div style="margin-left: 10%;">
+                <input name="os" id="os_1" type="radio"> Android
+                <br />
+                <input name="os" id="os_2" type="radio"> iOS
+                <br />
+                <input name="os" id="os_3" type="radio"> Windows Mobile
+            </div>
+        </div>
+        <div style="float: left; width: 33%;">
+            <h2 style="text-align:center;">Charging Port</h2>
+            <div style="margin-left: 15%;">
+                <input name="os" id="os_1" type="radio"> micro USB
+                <br />
+                <input name="os" id="os_2" type="radio"> USB-C
+                <br />
+                <input name="os" id="os_3" type="radio"> Lightning
+            </div>
+        </div>
+        <div style="float: left; width: 33%;">
+            <h2 style="text-align:center;">Miscellaneous</h2>
+            <div style="margin-left: 15%;">
+                <input name="misc" id="misc_1" type="checkbox"> water resistant
+                <br />
+                <input name="misc" id="misc_2" type="checkbox"> Headphone port
+            </div>
+        </div>
     </div>
 
 

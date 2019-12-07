@@ -12,6 +12,14 @@
     -->
 
     <style>
+        body {
+            overflow-y: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         .options_l {
             width: 24%;
             height: 500px;
@@ -81,10 +89,10 @@
 
 <body>
     <div class="navbar">
-        <a href="#">Camera</a>
-        <a class="active" href="#">Design</a>
-        <a href="#">Performance</a>
-        <a href="#">Extras</a>
+        <a id="nav_cam" href="#" onclick="cam()">Camera</a>
+        <a id="nav_design" class="active" href="#" onclick="design()">Design</a>
+        <a id="nav_performance" href="#" onclick="performance()">Performance</a>
+        <a id="nav_extras" href="#" onclick="extras()">Extras</a>
         <a href="#" style="float:right">Cart</a>
     </div>
 
@@ -125,6 +133,88 @@
         </div>
     </div>
 
+    <div id="extras" style="display: none;">
+        <div class="options_r" style="width:48%;">
+            <h1 style="text-align:center">Costumize everything else!</h1>
+            <hr />
+            <div style="float: left; width: 33%;">
+                <h2 style="text-align:center;">Operating System</h2>
+                <div style="margin-left: 10%;">
+                    <input name="os" id="os_1" type="radio"> Android
+                    <br />
+                    <input name="os" id="os_2" type="radio"> iOS
+                    <br />
+                    <input name="os" id="os_3" type="radio"> Windows Mobile
+                </div>
+            </div>
+            <div style="float: left; width: 33%;">
+                <h2 style="text-align:center;">Charging Port</h2>
+                <div style="margin-left: 15%;">
+                    <input name="os" id="os_1" type="radio"> micro USB
+                    <br />
+                    <input name="os" id="os_2" type="radio"> USB-C
+                    <br />
+                    <input name="os" id="os_3" type="radio"> Lightning
+                </div>
+            </div>
+            <div style="float: left; width: 33%;">
+                <h2 style="text-align:center;">Miscellaneous</h2>
+                <div style="margin-left: 15%;">
+                    <input name="misc" id="misc_1" type="checkbox"> water resistant
+                    <br />
+                    <input name="misc" id="misc_2" type="checkbox"> Headphone port
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="cam" style="display: none;">
+        <div id="cam" class="options_r" style="width:48%;">
+            <h1 style="text-align:center">Choose a front and a back camera!</h1>
+            <hr />
+            <br />
+            <table style="width:100%; text-align: center; font-size: larger;">
+                <tr>
+                    <th style="text-align: right;">Backcamera</th>
+                    <th></th>
+                    <th style="text-align: left;">Frontcamera</th>
+                </tr>
+                <tr>
+                    <td style="text-align: right;"><input name="cam_r" id="cam_0_l" type="radio"></td>
+                    <td style="width: 17%;">No Camera</td>
+                    <td style="text-align: left;"><input name="cam_l" id="cam_0_r" type="radio"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;"><input name="cam_r" id="cam_1_l" type="radio"></td>
+                    <td>8 MP</td>
+                    <td style="text-align: left;"><input name="cam_l" id="cam_1_r" type="radio"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;"><input name="cam_r" id="cam_2_l" type="radio"></td>
+                    <td>10 MP</td>
+                    <td style="text-align: left;"><input name="cam_l" id="cam_2_r" type="radio"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;"><input name="cam_r" id="cam_3_l" type="radio"></td>
+                    <td>12 MP</td>
+                    <td style="text-align: left;"><input name="cam_l" id="cam_3_r" type="radio"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;"><input name="cam_r" id="cam_4_l" type="radio"></td>
+                    <td>14 MP</td>
+                    <td style="text-align: left;"><input name="cam_l" id="cam_4_r" type="radio"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="performance" style="display: none">
+        <p>
+            test
+        </p>
+    </div>
+
     <!-- <img src="media/pre_h_red.png" style="width:27%"> -->
     <canvas id="c"></canvas>
 
@@ -137,8 +227,13 @@
     <!-- This is a simple to use extension for Three.js that activates all the rotating, dragging and zooming controls we need for both mouse and touch, there isn't a clear CDN for this that I can find -->
     <script src='https://threejs.org/examples/js/controls/OrbitControls.js'></script>
 
+    <!--   Load the JS-Script that is responsible for page navigation -->
+    <script src='navigation.js'></script>
+    
     <!--   Load the JS-Script that loads and renders the 3d Preview -->
     <script src='preview.js'></script>
+
+    
 </body>
 
 </html>

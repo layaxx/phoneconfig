@@ -85,6 +85,7 @@
             }
         }
     </style>
+
 </head>
 
 <body>
@@ -140,29 +141,29 @@
             <div style="float: left; width: 33%;">
                 <h2 style="text-align:center;">Operating System</h2>
                 <div style="margin-left: 10%;">
-                    <input name="os" id="os_1" type="radio"> Android
+                    <input name="os" id="os1" type="radio"> Android
                     <br />
-                    <input name="os" id="os_2" type="radio"> iOS
+                    <input name="os" id="os2" type="radio"> iOS
                     <br />
-                    <input name="os" id="os_3" type="radio"> Windows Mobile
+                    <input name="os" id="os3" type="radio"> Windows Mobile
                 </div>
             </div>
             <div style="float: left; width: 33%;">
                 <h2 style="text-align:center;">Charging Port</h2>
                 <div style="margin-left: 15%;">
-                    <input name="os" id="os_1" type="radio"> micro USB
+                    <input name="os" id="cp1" type="radio"> micro USB
                     <br />
-                    <input name="os" id="os_2" type="radio"> USB-C
+                    <input name="os" id="cp2" type="radio"> USB-C
                     <br />
-                    <input name="os" id="os_3" type="radio"> Lightning
+                    <input name="os" id="cp3" type="radio"> Lightning
                 </div>
             </div>
             <div style="float: left; width: 33%;">
                 <h2 style="text-align:center;">Miscellaneous</h2>
                 <div style="margin-left: 15%;">
-                    <input name="misc" id="misc_1" type="checkbox"> water resistant
+                    <input name="misc" id="misc1" type="checkbox"> water resistant
                     <br />
-                    <input name="misc" id="misc_2" type="checkbox"> Headphone port
+                    <input name="misc" id="misc2" type="checkbox"> Headphone port
                 </div>
             </div>
         </div>
@@ -229,11 +230,14 @@
 
     <!--   Load the JS-Script that is responsible for page navigation -->
     <script src='navigation.js'></script>
-    
+
+    <!--   Load the JS-Script that is responsible for selections and saving configurations -->
+    <script src='selection.js'></script>
+
     <!--   Load the JS-Script that loads and renders the 3d Preview -->
     <script src='preview.js'></script>
 
-    
+
 </body>
 
 </html>

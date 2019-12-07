@@ -6,8 +6,9 @@ const canvas = document.querySelector('#c');
 
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 
-const WIDTH = 514;
-const HEIGHT = 857;
+const WIDTH = innerWidth * 0.29;
+const HEIGHT = innerHeight;
+var frameCount = 0;
 
 var phone_r;
 var phone_h;
@@ -158,6 +159,14 @@ function animate() {
     } else {
         renderer.render(scene_h, camera);
     }
+
+    if (frameCount % 50 == 0) {
+        renderer.setSize(innerWidth * .29, innerHeight, false);
+        camera.aspect = (innerWidth * .29) / innerHeight;
+        camera.updateProjectionMatrix();
+        frameCount = 1;
+    }
+    frameCount++;
 
     requestAnimationFrame(animate);
 

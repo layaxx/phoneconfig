@@ -12,13 +12,86 @@ var cam_back = Math.floor(cam / 10);
 var cam_front = cam % 10;
 var color = vars.color;
 var shape = vars.shape;
-performance = vars.performance;
+performance = vars.perf;
+var ss = ('' + performance)[0];
+var bs = ('' + performance)[1];
+var ram = ('' + performance)[2];
+var cpu = ('' + performance)[3];
 extras = vars.extras;
 var os = ('' + extras)[0];
 var cp = ('' + extras)[1];
 var misc = ('' + extras)[2];
 
-console.log(os);
+// Initial Selection Cameras
+if (cam_back == 0) {
+    document.getElementById("cam_0_l").checked = true;
+} else if (cam_back == 1) {
+    document.getElementById("cam_1_l").checked = true;
+} else if (cam_back == 2) {
+    document.getElementById("cam_2_l").checked = true;
+} else if (cam_back == 3) {
+    document.getElementById("cam_3_l").checked = true;
+} else if (cam_back == 4) {
+    document.getElementById("cam_4_l").checked = true;
+}
+
+
+if (cam_front == 0) {
+    document.getElementById("cam_0_r").checked = true;
+} else if (cam_front == 1) {
+    document.getElementById("cam_1_r").checked = true;
+} else if (cam_front == 2) {
+    document.getElementById("cam_2_r").checked = true;
+} else if (cam_front == 3) {
+    document.getElementById("cam_3_r").checked = true;
+} else if (cam_front == 4) {
+    document.getElementById("cam_4_r").checked = true;
+}
+
+
+// Initial Selection Performance
+if (ss == 1) {
+    document.getElementById("ss1").checked = true;
+} else if (ss == 2) {
+    document.getElementById("ss2").checked = true;
+} else if (ss == 3) {
+    document.getElementById("ss3").checked = true;
+} else if (ss == 4) {
+    document.getElementById("ss4").checked = true;
+}
+
+if (bs == 1) {
+    document.getElementById("bs1").checked = true;
+} else if (bs == 2) {
+    document.getElementById("bs2").checked = true;
+} else if (bs == 3) {
+    document.getElementById("bs3").checked = true;
+} else if (bs == 4) {
+    document.getElementById("bs4").checked = true;
+}
+
+if (ram == 1) {
+    document.getElementById("ram1").checked = true;
+} else if (ram == 2) {
+    document.getElementById("ram2").checked = true;
+} else if (ram == 3) {
+    document.getElementById("ram3").checked = true;
+} else if (ram == 4) {
+    document.getElementById("ram4").checked = true;
+}
+
+if (cpu == 1) {
+    document.getElementById("cpu1").checked = true;
+} else if (cpu == 2) {
+    document.getElementById("cpu2").checked = true;
+} else if (cpu == 3) {
+    document.getElementById("cpu3").checked = true;
+} else if (cpu == 4) {
+    document.getElementById("cpu4").checked = true;
+}
+
+
+// Initial Selection Extras
 if (os == 1) {
     document.getElementById("os1").checked = true;
 } else if (os == 2) {
@@ -44,32 +117,6 @@ if (misc == 1) {
     document.getElementById("misc2").checked = true;
 }
 
-
-
-if (cam_back == 0) {
-    document.getElementById("cam_0_l").checked = true;
-} else if (cam_back == 1) {
-    document.getElementById("cam_1_l").checked = true;
-} else if (cam_back == 2) {
-    document.getElementById("cam_2_l").checked = true;
-} else if (cam_back == 3) {
-    document.getElementById("cam_3_l").checked = true;
-} else if (cam_back == 4) {
-    document.getElementById("cam_4_l").checked = true;
-}
-
-
-if (cam_front == 0) {
-    document.getElementById("cam_0_r").checked = true;
-} else if (cam_front == 1) {
-    document.getElementById("cam_1_r").checked = true;
-} else if (cam_front == 2) {
-    document.getElementById("cam_2_r").checked = true;
-} else if (cam_front == 3) {
-    document.getElementById("cam_3_r").checked = true;
-} else if (cam_front == 4) {
-    document.getElementById("cam_4_r").checked = true;
-}
 
 var LightenColor = function (color, percent) {
     var num = parseInt(color, 16),
@@ -156,6 +203,8 @@ function setMaterial(parent, type, mtl) {
     });
 }
 
+
+// Initial Selection Design: Throws error TODO
 if (shape == 1) {
     hardCorners();
 } else {

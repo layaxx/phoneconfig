@@ -183,10 +183,6 @@ function roundCorners() {
     changeColor(color);
 }
 
-function generateUrlVars() {
-
-
-}
 
 function setMaterial(parent, type, mtl) {
     parent.traverse((o) => {
@@ -196,6 +192,12 @@ function setMaterial(parent, type, mtl) {
             }
         }
     });
+}
+
+function back() {
+    if (confirm("You might loose your selections if you continue!")) {
+        location.href = '../index.html'
+    }
 }
 
 
@@ -210,3 +212,62 @@ if (shape == 1) {
 }
 
 
+function setCam(number, side) {
+    if (side == 'r') {
+        cam_front = number;
+    } else if (side == 'l') {
+        cam_back = number;
+    }
+}
+
+function setExtras(number, id) {
+    console.log(number + id);
+    if (id == 'os') {
+        os = number;
+    } else if (id == 'cp') {
+        cp = number;
+    }
+    else if (id == 'misc') {
+        if (misc == 1 && number == 1) {
+            misc = 0;
+        } else if (misc == 2 && number == 1) {
+            misc = 3;
+        } else if (misc == 3 && number == 1) {
+            misc = 2;
+        } else if (misc == 1 && number == 2) {
+            misc = 3;
+        } else if (misc == 2 && number == 2) {
+            misc = 0;
+        } else if (misc == 3 && number == 2) {
+            misc = 2;
+        } else if (misc == 0 && number == 2) {
+            misc = 2;
+        } else if (misc == 0 && number == 1) {
+            misc = 1;
+        }
+    }
+    console.log(misc);
+}
+
+function setPerf(number, id) {
+    if (id == 'ss') {
+        ss = number;
+    } else if (id == 'bs') {
+        id = number;
+    } else if (id == 'ram') {
+        ram = number;
+    } else if (id == 'cpu') {
+        cpu = number;
+    }
+}
+
+
+function generateUrlVars() {
+    var output = 'cam='
+    output = output + cam_back + cam_front;
+    output = output + '&color=' + color;
+    output = output + '&shape=' + shape;
+    output = output + '&perf=' + ss + bs + ram + cpu;
+    output = output + '&extras=' + os + cp + misc;
+    return output;
+}

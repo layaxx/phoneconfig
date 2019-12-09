@@ -47,7 +47,22 @@
             margin-top: 60px;
             width: 80px;
             height: 80px;
+            cursor: pointer;
         }
+
+        .activeColor {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 60px;
+            width: 80px;
+            height: 80px;
+            border: 4px dotted rgb(146, 146, 199);
+            text-align: center;
+            font-size: 50pt;
+            color: white;
+        }
+
 
         .colors_name {
             text-align: center;
@@ -84,16 +99,34 @@
                 display: block;
             }
         }
+
+        .buttons {
+            float: left;
+            margin-left: 5px;
+            margin-top: -10px;
+            padding: 15px;
+            font-size: larger;
+            background: #555;
+            color: white;
+            cursor: pointer;
+        }
     </style>
 
 </head>
 
 <body>
+
+    <div style="margin-left: 40px; margin-top: 10px; position: absolute;">
+        <div class="buttons" style="margin-left:-10px;" onclick="location.href='../index.html'"> &#8592; PRESETS</div>
+        <div class="buttons">&#8595; EXPORT</div>
+        <div class="buttons">&#8593; IMPORT</div>
+    </div>
+
     <div class="navbar">
-        <a id="nav_cam" href="#" onclick="cam()">Camera</a>
-        <a id="nav_design" class="active" href="#" onclick="design()">Design</a>
-        <a id="nav_performance" href="#" onclick="performance()">Performance</a>
-        <a id="nav_extras" href="#" onclick="extras()">Extras</a>
+        <a id="nav_design" class="active" href="#" onclick="goToDesign()">Design</a>
+        <a id="nav_cam" href="#" onclick="goToCam()">Camera</a>
+        <a id="nav_performance" href="#" onclick="goToPerformance()">Performance</a>
+        <a id="nav_extras" href="#" onclick="goToExtras()">Extras</a>
         <a href="#" style="float:right">Cart</a>
     </div>
 
@@ -111,22 +144,26 @@
             <hr />
 
             <div style="width: 50%; float: left;">
-                <div class="colors" style="background-color: black;"></div>
+                <div id="color_black" class="colors" style="background-color: black;" onclick="changeColor('000000')">
+                </div>
                 <div class="colors_name">
                     <h2>Black</h2>
                 </div>
-                <div class="colors" style="background-color: red;"></div>
+                <div id="color_red" class="colors" style="background-color: red;" onclick="changeColor('FF0000')">
+                </div>
                 <div class="colors_name">
                     <h2>Red</h2>
                 </div>
             </div>
 
             <div style="width: 50%; float: right;">
-                <div class="colors" style="background-color: white;"></div>
+                <div id="color_white" class="colors" style="background-color: white; color: black;" onclick="changeColor('FFFFFF')">
+                </div>
                 <div class="colors_name">
                     <h2>white</h2>
                 </div>
-                <div class="colors" style="background-color: blue;"></div>
+                <div id="color_blue" class="colors" style="background-color: blue;" onclick="changeColor('0000FF')">
+                </div>
                 <div class="colors_name">
                     <h2>blue</h2>
                 </div>

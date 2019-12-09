@@ -14,7 +14,7 @@ var phone_r;
 var phone_h;
 
 const MODEL_PATH_R = "../media/models/phone_r_model.glb";
-const MODEL_PATH_H = "../medie/models/phone_h_model.glb";
+const MODEL_PATH_H = "../media/models/phone_h_model.glb";
 
 var r = true;
 
@@ -142,7 +142,6 @@ scene_h.add(dirLight_h);
 
 
 
-
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.maxPolarAngle = Math.PI / 2;
 controls.minPolarAngle = Math.PI / 3;
@@ -151,6 +150,33 @@ controls.enablePan = false;
 controls.dampingFactor = 0.1;
 controls.autoRotate = false; // Toggle this if you'd like the chair to automatically rotate
 controls.autoRotateSpeed = 0.2; // 30
+
+
+function changeColor(newColor) {
+    // TODO: Change Color
+    document.getElementById("color_black").className = "colors";
+    document.getElementById("color_white").className = "colors";
+    document.getElementById("color_red").className = "colors";
+    document.getElementById("color_blue").className = "colors";
+    document.getElementById("color_black").innerHTML = "";
+    document.getElementById("color_white").innerHTML = "";
+    document.getElementById("color_red").innerHTML = "";
+    document.getElementById("color_blue").innerHTML = "";
+    if (newColor == "000000") {
+        document.getElementById("color_black").className = "activeColor";
+        document.getElementById("color_black").innerHTML = "X";
+    } else if (newColor == "FFFFFF") {
+        document.getElementById("color_white").className = "activeColor";
+        document.getElementById("color_white").innerHTML = "X";
+    } else if (newColor == "FF0000") {
+        document.getElementById("color_red").className = "activeColor";
+        document.getElementById("color_red").innerHTML = "X";
+    } else if (newColor == "0000FF") {
+        document.getElementById("color_blue").className = "activeColor";
+        document.getElementById("color_blue").innerHTML = "X";
+    }
+}
+
 
 function animate() {
     controls.update();

@@ -1,4 +1,4 @@
-function cam() {
+function goToCam() {
     document.getElementById("cam").style.display = "block";
     document.getElementById("design").style.display = "none";
     document.getElementById("extras").style.display = "none";
@@ -10,7 +10,7 @@ function cam() {
     document.getElementById("nav_performance").style.backgroundColor = "#555";
 }
 
-function design() {
+function goToDesign() {
     document.getElementById("design").style.display = "block";
     document.getElementById("cam").style.display = "none";
     document.getElementById("extras").style.display = "none";
@@ -22,7 +22,7 @@ function design() {
     document.getElementById("nav_performance").style.backgroundColor = "#555";
 }
 
-function performance() {
+function goToPerformance() {
     document.getElementById("performance").style.display = "block";
     document.getElementById("cam").style.display = "none";
     document.getElementById("extras").style.display = "none";
@@ -34,7 +34,7 @@ function performance() {
     document.getElementById("nav_cam").style.backgroundColor = "#555";
 }
 
-function extras() {
+function goToExtras() {
     document.getElementById("extras").style.display = "block";
     document.getElementById("cam").style.display = "none";
     document.getElementById("design").style.display = "none";

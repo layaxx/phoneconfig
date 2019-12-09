@@ -261,6 +261,7 @@ function setMaterial(parent, type, mtl) {
 if (shape == 1) {
     document.getElementById("corners_hard").className = "activeShape";
     document.getElementById("corners_round").className = "shape";
+    r = false;
 } else {
     document.getElementById("corners_round").className = "activeShape";
     document.getElementById("corners_hard").className = "shape";

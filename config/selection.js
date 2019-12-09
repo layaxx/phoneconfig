@@ -1,21 +1,67 @@
 
-var cam, design, performance, extras;
+var cam, shape, color, performance, extras, screen;
 
 
 cam = vars.cam;
+performance = vars.perf;
+extras = vars.extras;
+screen = vars.screen;
+color = vars.color;
+shape = vars.shape;
+
 var cam_back = Math.floor(cam / 10);
 var cam_front = cam % 10;
-var color = vars.color;
-var shape = vars.shape;
-performance = vars.perf;
 var ss = ('' + performance)[0];
 var bs = ('' + performance)[1];
 var ram = ('' + performance)[2];
 var cpu = ('' + performance)[3];
-extras = vars.extras;
 var os = ('' + extras)[0];
 var cp = ('' + extras)[1];
 var misc = ('' + extras)[2];
+
+var error = false;
+// Replace undefined with Standard-Values
+if (typeof cam == 'undefined' || parseInt(cam_back, 10) > 4 || parseInt(cam_front, 10) > 4) {
+    cam = '11';
+    error = true;
+}
+if (typeof color == 'undefined') {
+    color = '000000';
+    error = true;
+}
+if (typeof shape == 'undefined' || parseInt(shape, 10) > 2) {
+    shape = '1';
+    error = true;
+}
+if (typeof performance == 'undefined' || parseInt(ss, 10) > 4 || parseInt(bs, 10) > 4 || parseInt(ram, 10) > 4 || parseInt(cpu, 10) > 4) {
+    performance = '2222';
+    error = true;
+}
+if (typeof extras == 'undefined' || parseInt(os, 10) > 3 || parseInt(cp, 10) > 3 || parseInt(misc, 10) > 3) {
+    extras = '110';
+    error = true;
+}
+if (typeof screen == 'undefined' || parseInt(screen, 10) > 4) {
+    screen = '1';
+    error = true;
+}
+
+cam_back = Math.floor(cam / 10);
+cam_front = cam % 10;
+ss = ('' + performance)[0];
+bs = ('' + performance)[1];
+ram = ('' + performance)[2];
+cpu = ('' + performance)[3];
+os = ('' + extras)[0];
+cp = ('' + extras)[1];
+misc = ('' + extras)[2];
+
+if (error) {
+    alert("One or more values were undefined and have been replaced with standard value");
+    goTo(screen, true);
+}
+
+var oldVars = generateUrlVars(false);
 
 // Initial Selection Cameras
 if (cam_back == 0) {
@@ -113,6 +159,10 @@ if (misc == 1) {
 }
 
 
+// Initialise Screen
+
+goTo(screen, false);
+
 var LightenColor = function (color, percent) {
     var num = parseInt(color, 16),
         amt = Math.round(2.55 * percent),
@@ -194,11 +244,6 @@ function setMaterial(parent, type, mtl) {
     });
 }
 
-function back() {
-    if (confirm("You might loose your selections if you continue!")) {
-        location.href = '../index.html'
-    }
-}
 
 
 // Initial Selection Design
@@ -221,7 +266,6 @@ function setCam(number, side) {
 }
 
 function setExtras(number, id) {
-    console.log(number + id);
     if (id == 'os') {
         os = number;
     } else if (id == 'cp') {
@@ -246,7 +290,6 @@ function setExtras(number, id) {
             misc = 1;
         }
     }
-    console.log(misc);
 }
 
 function setPerf(number, id) {
@@ -262,12 +305,15 @@ function setPerf(number, id) {
 }
 
 
-function generateUrlVars() {
+function generateUrlVars(s) {
     var output = 'cam='
     output = output + cam_back + cam_front;
     output = output + '&color=' + color;
     output = output + '&shape=' + shape;
     output = output + '&perf=' + ss + bs + ram + cpu;
     output = output + '&extras=' + os + cp + misc;
+    if (s) {
+        output = output + '&screen=' + screen;
+    }
     return output;
 }

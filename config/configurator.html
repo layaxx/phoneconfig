@@ -162,10 +162,10 @@
     </div>
 
     <div class="navbar">
-        <a id="nav_design" class="active" href="#" onclick="goToDesign()">Design</a>
-        <a id="nav_cam" href="#" onclick="goToCam()">Camera</a>
-        <a id="nav_performance" href="#" onclick="goToPerformance()">Performance</a>
-        <a id="nav_extras" href="#" onclick="goToExtras()">Extras</a>
+        <a id="nav_design" class="active" href="#" onclick="goTo(1, true)">Design</a>
+        <a id="nav_cam" href="#" onclick="goTo(2, true)">Camera</a>
+        <a id="nav_performance" href="#" onclick="goTo(3, true)">Performance</a>
+        <a id="nav_extras" href="#" onclick="goTo(4, true)">Extras</a>
         <a href="#" style="float:right">Cart</a>
     </div>
 
@@ -224,29 +224,39 @@
                     <th style="text-align: left;">Frontcamera</th>
                 </tr>
                 <tr>
-                    <td style="text-align: right;"><input name="cam_l" id="cam_0_l" type="radio" onclick="setCam(0, 'l')"></td>
+                    <td style="text-align: right;"><input name="cam_l" id="cam_0_l" type="radio"
+                            onclick="setCam(0, 'l')"></td>
                     <td style="width: 17%;">No Camera</td>
-                    <td style="text-align: left;"><input name="cam_r" id="cam_0_r" type="radio" onclick="setCam(0, 'r')"></td>
+                    <td style="text-align: left;"><input name="cam_r" id="cam_0_r" type="radio"
+                            onclick="setCam(0, 'r')"></td>
                 </tr>
                 <tr>
-                    <td style="text-align: right;"><input name="cam_l" id="cam_1_l" type="radio" onclick="setCam(1, 'l')" checked="checked"></td>
+                    <td style="text-align: right;"><input name="cam_l" id="cam_1_l" type="radio"
+                            onclick="setCam(1, 'l')" checked="checked"></td>
                     <td>8 MP</td>
-                    <td style="text-align: left;"><input name="cam_r" id="cam_1_r" type="radio" onclick="setCam(1, 'r')" checked="checked"></td>
+                    <td style="text-align: left;"><input name="cam_r" id="cam_1_r" type="radio" onclick="setCam(1, 'r')"
+                            checked="checked"></td>
                 </tr>
                 <tr>
-                    <td style="text-align: right;"><input name="cam_l" id="cam_2_l" onclick="setCam(2, 'l')" type="radio"></td>
+                    <td style="text-align: right;"><input name="cam_l" id="cam_2_l" onclick="setCam(2, 'l')"
+                            type="radio"></td>
                     <td>10 MP</td>
-                    <td style="text-align: left;"><input name="cam_r" id="cam_2_r" onclick="setCam(2, 'r')" type="radio"></td>
+                    <td style="text-align: left;"><input name="cam_r" id="cam_2_r" onclick="setCam(2, 'r')"
+                            type="radio"></td>
                 </tr>
                 <tr>
-                    <td style="text-align: right;"><input name="cam_l" id="cam_3_l" onclick="setCam(3, 'l')" type="radio"></td>
+                    <td style="text-align: right;"><input name="cam_l" id="cam_3_l" onclick="setCam(3, 'l')"
+                            type="radio"></td>
                     <td>12 MP</td>
-                    <td style="text-align: left;"><input name="cam_r" id="cam_3_r" onclick="setCam(3, 'r')" type="radio"></td>
+                    <td style="text-align: left;"><input name="cam_r" id="cam_3_r" onclick="setCam(3, 'r')"
+                            type="radio"></td>
                 </tr>
                 <tr>
-                    <td style="text-align: right;"><input name="cam_l" id="cam_4_l" onclick="setCam(4, 'l')" type="radio"></td>
+                    <td style="text-align: right;"><input name="cam_l" id="cam_4_l" onclick="setCam(4, 'l')"
+                            type="radio"></td>
                     <td>14 MP</td>
-                    <td style="text-align: left;"><input name="cam_r" id="cam_4_r" onclick="setCam(4, 'r')" type="radio"></td>
+                    <td style="text-align: left;"><input name="cam_r" id="cam_4_r" onclick="setCam(4, 'r')"
+                            type="radio"></td>
                 </tr>
             </table>
         </div>
@@ -262,17 +272,17 @@
                 <div style="margin-left: 25%;">
                     <input name="ss" id="ss1" type="radio" checked="checked" onclick="setPerf(1, 'ss')"> 64GB
                     <br>
-                    <input name="ss" id="ss2" type="radio"  onclick="setPerf(2, 'ss')"> 128GB
+                    <input name="ss" id="ss2" type="radio" onclick="setPerf(2, 'ss')"> 128GB
                     <br>
-                    <input name="ss" id="ss3" type="radio"  onclick="setPerf(3, 'ss')"> 256GB
+                    <input name="ss" id="ss3" type="radio" onclick="setPerf(3, 'ss')"> 256GB
                     <br>
-                    <input name="ss" id="ss4" type="radio"  onclick="setPerf(4, 'ss')"> 512GB
+                    <input name="ss" id="ss4" type="radio" onclick="setPerf(4, 'ss')"> 512GB
                 </div>
             </div>
             <div class="optionsInside">
                 <h2>Battery Size</h2>
                 <div style="margin-left: 25%;">
-                    <input name="bs" id="bs1" type="radio" checked="checked"  onclick="setPerf(1, 'bs')"> 2000mAh
+                    <input name="bs" id="bs1" type="radio" checked="checked" onclick="setPerf(1, 'bs')"> 2000mAh
                     <br>
                     <input name="bs" id="bs2" type="radio" onclick="setPerf(2, 'bs')"> 2500mAh
                     <br>
@@ -284,7 +294,7 @@
             <div class="optionsInside" style="margin-top: 35px;">
                 <h2>RAM</h2>
                 <div style="margin-left: 25%;">
-                    <input name="ram" id="ram1" type="radio" checked="checked"  onclick="setPerf(1, 'ram')"> 2GB
+                    <input name="ram" id="ram1" type="radio" checked="checked" onclick="setPerf(1, 'ram')"> 2GB
                     <br>
                     <input name="ram" id="ram2" type="radio" onclick="setPerf(2, 'ram')"> 4GB
                     <br>
@@ -317,7 +327,7 @@
             <div class="optionsInside">
                 <h2>Operating System</h2>
                 <div>
-                    <input name="os" id="os1" type="radio" checked="checked"  onclick="setExtras(1, 'os')"> Android
+                    <input name="os" id="os1" type="radio" checked="checked" onclick="setExtras(1, 'os')"> Android
                     <br>
                     <input name="os" id="os2" type="radio" onclick="setExtras(2, 'os')"> iOS
                     <br>

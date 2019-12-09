@@ -161,6 +161,11 @@
         <div class="buttons">&#8593; IMPORT</div>
     </div>
 
+    <div style="margin-left: 140px; margin-top: 45%; position: absolute;">
+        <div class="buttons"> PRICE</div>
+        <div class="buttons">&#8594; add to cart</div>
+    </div>
+
     <div class="navbar">
         <a id="nav_design" class="active" href="#" onclick="goTo(1, true)">Design</a>
         <a id="nav_cam" href="#" onclick="goTo(2, true)">Camera</a>
@@ -170,7 +175,7 @@
     </div>
 
     <div id="design">
-        <div class="options_r">
+        <div class="options_r" style="height: 630px;">
             <h2>Choose your shape:</h2>
             <hr>
             <img id="corners_hard" src="../media/hard.jpg" width="25%" class="shape" onclick="hardCorners()">
@@ -179,7 +184,7 @@
             <h3 style="margin-top: -30px;">round corners</h3>
         </div>
 
-        <div class="options_l">
+        <div class="options_l" style="height: 630px;">
             <h2>Choose your color:</h2>
             <hr>
 
@@ -207,6 +212,13 @@
                 </div>
                 <div class="colors_name">
                     <h2>blue</h2>
+                </div>
+            </div>
+            <div>
+                <input type="color" id="color_costum" value="#e66465"
+                    style="margin-left: 40%; width: 80px; height: 80px;" onchange="changeColorCostum()" style="cursor:pointer;">
+                <div class="colors_name">
+                    <h2>Costum Color</h2>
                 </div>
             </div>
         </div>

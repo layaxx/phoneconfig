@@ -68,7 +68,10 @@ if (vars.color == "000000") {
 } else if (vars.color == "0000FF") {
     document.getElementById("color_blue").className = "activeColor";
     document.getElementById("color_blue").innerHTML = "X";
+} else {
+    document.getElementById("color_costum").className = "activeColor";
 }
+document.getElementById("color_costum").value = '#' + vars.color;
 
 var mtl_map = [
     { childID: "button_top", mtl: MTL_TOP },

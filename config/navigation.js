@@ -90,6 +90,7 @@ function goTo(id, redirect) {
         document.getElementById("nav_performance").style.backgroundColor = "#555";
     }
     if (redirect && generateUrlVars(false) != oldVars) {
+        screen = id;
         var address = 'configurator.html?' + generateUrlVars(true);
         location.href = address;
     }

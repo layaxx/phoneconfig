@@ -174,6 +174,14 @@ var LightenColor = function (color, percent) {
 };
 
 
+function changeColorCostum() {
+    var newColor = document.getElementById("color_costum").value;
+    console.log(newColor);
+    newColor = newColor.substr(1);
+    console.log(newColor);
+    changeColor(newColor);
+}
+
 function changeColor(newColor) {
     // TODO: Change Color
     mtl_body = new THREE.MeshPhongMaterial({ color: parseInt('0x' + newColor), shininess: 10 });
@@ -190,6 +198,7 @@ function changeColor(newColor) {
         setMaterial(phone_h, 'button_home', mtl_home);
     }
 
+    document.getElementById("color_costum").className = "colors";
     document.getElementById("color_black").className = "colors";
     document.getElementById("color_white").className = "colors";
     document.getElementById("color_red").className = "colors";
@@ -210,7 +219,10 @@ function changeColor(newColor) {
     } else if (newColor == "0000FF") {
         document.getElementById("color_blue").className = "activeColor";
         document.getElementById("color_blue").innerHTML = "X";
+    } else {
+        document.getElementById("color_costum").className = "activeColor";
     }
+    document.getElementById("color_costum").value = '#' + newColor;
     color = newColor;
 }
 

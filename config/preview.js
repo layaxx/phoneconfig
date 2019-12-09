@@ -44,14 +44,14 @@ const MTL_INITIAL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10
 const MTL_CAM = new THREE.MeshPhongMaterial({ color: 0xE7E7E7, shininess: 10 });
 const MTL_FLASH = new THREE.MeshPhongMaterial({ color: 0x333333, shininess: 10 });
 const MTL_TOP = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
-const MTL_HOME = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
+var mtl_home = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
 const MTL_DISPLAY = new THREE.MeshPhongMaterial({ color: 0x1D1D1D, shininess: 10 });
 var mtl_body = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
 
 var mtl_map = [
     { childID: "button_top", mtl: MTL_TOP },
     { childID: "body", mtl: mtl_body },
-    { childID: "button_home", mtl: MTL_HOME },
+    { childID: "button_home", mtl: mtl_home },
     { childID: "cam", mtl: MTL_CAM },
     { childID: "flash", mtl: MTL_FLASH },
     { childID: "display", mtl: MTL_DISPLAY },

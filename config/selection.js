@@ -8,8 +8,8 @@ var cam, design, performance, extras;
 
 
 cam = vars.cam;
-var cam_back = ('' + cam)[0];
-var cam_front = ('' + cam)[1];
+var cam_back = Math.floor(cam / 10);
+var cam_front = cam % 10;
 var color = vars.color;
 var shape = vars.shape;
 performance = vars.performance;
@@ -18,7 +18,7 @@ var os = ('' + extras)[0];
 var cp = ('' + extras)[1];
 var misc = ('' + extras)[2];
 
-
+console.log(os);
 if (os == 1) {
     document.getElementById("os1").checked = true;
 } else if (os == 2) {
@@ -71,15 +71,32 @@ if (cam_front == 0) {
     document.getElementById("cam_4_r").checked = true;
 }
 
+var LightenColor = function (color, percent) {
+    var num = parseInt(color, 16),
+        amt = Math.round(2.55 * percent),
+        R = (num >> 16) + amt,
+        B = (num >> 8 & 0x00FF) + amt,
+        G = (num & 0x0000FF) + amt;
+
+    return (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 + (B < 255 ? B < 1 ? 0 : B : 255) * 0x100 + (G < 255 ? G < 1 ? 0 : G : 255)).toString(16).slice(1);
+};
+
 
 function changeColor(newColor) {
     // TODO: Change Color
     mtl_body = new THREE.MeshPhongMaterial({ color: parseInt('0x' + newColor), shininess: 10 });
-    setMaterial(phone_r, 'body', mtl_body);
-    setMaterial(phone_h, 'body', mtl_body);
-    setMaterial(phone_r, 'button_home', mtl_body);
-    setMaterial(phone_h, 'button_home', mtl_body);
-
+    if (r) {
+        setMaterial(phone_r, 'body', mtl_body);
+    } else {
+        setMaterial(phone_h, 'body', mtl_body);
+    }
+    var newLighterColor = LightenColor(newColor, 7);
+    mtl_home = new THREE.MeshPhongMaterial({ color: parseInt('0x' + newLighterColor), shininess: 10 });
+    if (r) {
+        setMaterial(phone_r, 'button_home', mtl_home);
+    } else {
+        setMaterial(phone_h, 'button_home', mtl_home);
+    }
 
     document.getElementById("color_black").className = "colors";
     document.getElementById("color_white").className = "colors";
@@ -102,6 +119,31 @@ function changeColor(newColor) {
         document.getElementById("color_blue").className = "activeColor";
         document.getElementById("color_blue").innerHTML = "X";
     }
+    color = newColor;
+}
+
+
+
+
+function hardCorners() {
+    document.getElementById("corners_hard").className = "activeShape";
+    document.getElementById("corners_round").className = "shape";
+    r = false;
+    shape = 1;
+    changeColor(color);
+}
+
+function roundCorners() {
+    document.getElementById("corners_round").className = "activeShape";
+    document.getElementById("corners_hard").className = "shape";
+    r = true;
+    shape = 2;
+    changeColor(color);
+}
+
+function generateUrlVars() {
+
+
 }
 
 function setMaterial(parent, type, mtl) {
@@ -114,17 +156,8 @@ function setMaterial(parent, type, mtl) {
     });
 }
 
-function hardCorners() {
-    document.getElementById("corners_hard").className = "activeShape";
-    document.getElementById("corners_round").className = "shape";
-}
-
-function roundCorners() {
-    document.getElementById("corners_round").className = "activeShape";
-    document.getElementById("corners_hard").className = "shape";
-}
-
-function generateUrlVars() {
-
-
+if (shape == 1) {
+    hardCorners();
+} else {
+    roundCorners();
 }

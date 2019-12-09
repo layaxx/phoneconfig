@@ -229,9 +229,9 @@
                     <td style="text-align: left;"><input name="cam_l" id="cam_0_r" type="radio"></td>
                 </tr>
                 <tr>
-                    <td style="text-align: right;"><input name="cam_r" id="cam_1_l" type="radio"></td>
+                    <td style="text-align: right;"><input name="cam_r" id="cam_1_l" type="radio" checked="checked"></td>
                     <td>8 MP</td>
-                    <td style="text-align: left;"><input name="cam_l" id="cam_1_r" type="radio"></td>
+                    <td style="text-align: left;"><input name="cam_l" id="cam_1_r" type="radio" checked="checked"></td>
                 </tr>
                 <tr>
                     <td style="text-align: right;"><input name="cam_r" id="cam_2_l" type="radio"></td>
@@ -260,7 +260,7 @@
             <div class="optionsInside">
                 <h2>Storage Space</h2>
                 <div style="margin-left: 25%;">
-                    <input name="ss" id="ss1" type="radio"> 64GB
+                    <input name="ss" id="ss1" type="radio" checked="checked"> 64GB
                     <br>
                     <input name="ss" id="ss2" type="radio"> 128GB
                     <br>
@@ -272,7 +272,7 @@
             <div class="optionsInside">
                 <h2>Battery Size</h2>
                 <div style="margin-left: 25%;">
-                    <input name="bs" id="bs1" type="radio"> 2000mAh
+                    <input name="bs" id="bs1" type="radio" checked="checked"> 2000mAh
                     <br>
                     <input name="bs" id="bs2" type="radio"> 2500mAh
                     <br>
@@ -284,7 +284,7 @@
             <div class="optionsInside" style="margin-top: 35px;">
                 <h2>RAM</h2>
                 <div style="margin-left: 25%;">
-                    <input name="ram" id="ram1" type="radio"> 2GB
+                    <input name="ram" id="ram1" type="radio" checked="checked"> 2GB
                     <br>
                     <input name="ram" id="ram2" type="radio"> 4GB
                     <br>
@@ -296,7 +296,7 @@
             <div class="optionsInside" style="margin-top: 35px;">
                 <h2>CPU</h2>
                 <div style="margin-left: 25%;">
-                    <input name="cpu" id="cpu1" type="radio"> 2 x 1.4GHz
+                    <input name="cpu" id="cpu1" type="radio" checked="checked"> 2 x 1.4GHz
                     <br>
                     <input name="cpu" id="cpu2" type="radio"> 4 x 1.8GHz
                     <br>
@@ -317,7 +317,7 @@
             <div class="optionsInside">
                 <h2>Operating System</h2>
                 <div>
-                    <input name="os" id="os1" type="radio"> Android
+                    <input name="os" id="os1" type="radio" checked="checked"> Android
                     <br>
                     <input name="os" id="os2" type="radio"> iOS
                     <br>
@@ -327,11 +327,11 @@
             <div class="optionsInside">
                 <h2>Charging Port</h2>
                 <div>
-                    <input name="os" id="cp1" type="radio"> micro USB
+                    <input name="cp" id="cp1" type="radio" checked="checked"> micro USB
                     <br>
-                    <input name="os" id="cp2" type="radio"> USB-C
+                    <input name="cp" id="cp2" type="radio"> USB-C
                     <br>
-                    <input name="os" id="cp3" type="radio"> Lightning
+                    <input name="cp" id="cp3" type="radio"> Lightning
                 </div>
             </div>
             <div class="optionsInside" style="margin-top: 35px;">
@@ -346,7 +346,6 @@
     </div>
 
 
-    <!-- <img src="media/pre_h_red.png" style="width:27%"> -->
     <canvas id="c"></canvas>
 
     <!-- The main Three.js file -->
@@ -358,14 +357,15 @@
     <!-- This is a simple to use extension for Three.js that activates all the rotating, dragging and zooming controls we need for both mouse and touch, there isn't a clear CDN for this that I can find -->
     <script src='https://threejs.org/examples/js/controls/OrbitControls.js'></script>
 
+    <!--   Load the JS-Script that loads and renders the 3d Preview -->
+    <script src='preview.js'></script>
+
+
     <!--   Load the JS-Script that is responsible for page navigation -->
     <script src='navigation.js'></script>
 
     <!--   Load the JS-Script that is responsible for selections and saving configurations -->
     <script src='selection.js'></script>
-
-    <!--   Load the JS-Script that loads and renders the 3d Preview -->
-    <script src='preview.js'></script>
 
 
 </body>

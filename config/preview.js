@@ -40,15 +40,21 @@ renderer.setSize(WIDTH, HEIGHT, false);
 camera.aspect = WIDTH / HEIGHT;
 camera.updateProjectionMatrix();
 
-const INITIAL_MTL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
+const MTL_INITIAL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
+const MTL_CAM = new THREE.MeshPhongMaterial({ color: 0xE7E7E7, shininess: 10 });
+const MTL_FLASH = new THREE.MeshPhongMaterial({ color: 0x333333, shininess: 10 });
+const MTL_TOP = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
+const MTL_HOME = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
+const MTL_DISPLAY = new THREE.MeshPhongMaterial({ color: 0x1D1D1D, shininess: 10 });
+var mtl_body = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
 
-const INITIAL_MAP = [
-    { childID: "button_top", mtl: INITIAL_MTL },
-    { childID: "body", mtl: INITIAL_MTL },
-    { childID: "button_home", mtl: INITIAL_MTL },
-    { childID: "cam", mtl: INITIAL_MTL },
-    { childID: "flash", mtl: INITIAL_MTL },
-    { childID: "display", mtl: INITIAL_MTL },
+var mtl_map = [
+    { childID: "button_top", mtl: MTL_TOP },
+    { childID: "body", mtl: mtl_body },
+    { childID: "button_home", mtl: MTL_HOME },
+    { childID: "cam", mtl: MTL_CAM },
+    { childID: "flash", mtl: MTL_FLASH },
+    { childID: "display", mtl: MTL_DISPLAY },
 ];
 
 // Init the object loader
@@ -67,7 +73,7 @@ loader.load(MODEL_PATH_R, function (gltf) {
     phone_r.position.y = 0;
 
     // Set initial textures
-    for (let object of INITIAL_MAP) {
+    for (let object of mtl_map) {
         initColor(phone_r, object.childID, object.mtl);
     }
 
@@ -91,7 +97,7 @@ loader.load(MODEL_PATH_H, function (gltf) {
     phone_h.position.y = 0;
 
     // Set initial textures
-    for (let object of INITIAL_MAP) {
+    for (let object of mtl_map) {
         initColor(phone_h, object.childID, object.mtl);
     }
 

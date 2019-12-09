@@ -74,6 +74,13 @@ if (cam_front == 0) {
 
 function changeColor(newColor) {
     // TODO: Change Color
+    mtl_body = new THREE.MeshPhongMaterial({ color: parseInt('0x' + newColor), shininess: 10 });
+    setMaterial(phone_r, 'body', mtl_body);
+    setMaterial(phone_h, 'body', mtl_body);
+    setMaterial(phone_r, 'button_home', mtl_body);
+    setMaterial(phone_h, 'button_home', mtl_body);
+
+
     document.getElementById("color_black").className = "colors";
     document.getElementById("color_white").className = "colors";
     document.getElementById("color_red").className = "colors";
@@ -97,13 +104,22 @@ function changeColor(newColor) {
     }
 }
 
+function setMaterial(parent, type, mtl) {
+    parent.traverse((o) => {
+        if (o.isMesh && o.nameID != null) {
+            if (o.nameID == type) {
+                o.material = mtl;
+            }
+        }
+    });
+}
 
-function hardCorners(){
+function hardCorners() {
     document.getElementById("corners_hard").className = "activeShape";
     document.getElementById("corners_round").className = "shape";
 }
 
-function roundCorners(){
+function roundCorners() {
     document.getElementById("corners_round").className = "activeShape";
     document.getElementById("corners_hard").className = "shape";
 }

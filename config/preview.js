@@ -152,31 +152,6 @@ controls.autoRotate = false; // Toggle this if you'd like the chair to automatic
 controls.autoRotateSpeed = 0.2; // 30
 
 
-function changeColor(newColor) {
-    // TODO: Change Color
-    document.getElementById("color_black").className = "colors";
-    document.getElementById("color_white").className = "colors";
-    document.getElementById("color_red").className = "colors";
-    document.getElementById("color_blue").className = "colors";
-    document.getElementById("color_black").innerHTML = "";
-    document.getElementById("color_white").innerHTML = "";
-    document.getElementById("color_red").innerHTML = "";
-    document.getElementById("color_blue").innerHTML = "";
-    if (newColor == "000000") {
-        document.getElementById("color_black").className = "activeColor";
-        document.getElementById("color_black").innerHTML = "X";
-    } else if (newColor == "FFFFFF") {
-        document.getElementById("color_white").className = "activeColor";
-        document.getElementById("color_white").innerHTML = "X";
-    } else if (newColor == "FF0000") {
-        document.getElementById("color_red").className = "activeColor";
-        document.getElementById("color_red").innerHTML = "X";
-    } else if (newColor == "0000FF") {
-        document.getElementById("color_blue").className = "activeColor";
-        document.getElementById("color_blue").innerHTML = "X";
-    }
-}
-
 
 function animate() {
     controls.update();

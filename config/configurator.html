@@ -6,7 +6,9 @@
     <meta name="viewport"
         content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Config</title>
+    <title>Phone Configurator - Config</title>
+    <link rel="icon" type="image/png" href="../media/favicon-32x32.png">
+
     <!--   3D Preview based on a Tutorial by Codrops, although altered:
     https://tympanus.net/codrops/2019/09/17/how-to-build-a-color-customizer-app-for-a-3d-model-with-three-js/
     -->
@@ -119,13 +121,33 @@
 
         .buttons {
             float: left;
-            margin-left: 5px;
+            margin-left: 45px;
             margin-top: -10px;
             padding: 15px;
             font-size: larger;
             background: #555;
             color: white;
             cursor: pointer;
+        }
+
+        .shape {
+            -webkit-transform: rotate(270deg);
+            -moz-transform: rotate(270deg);
+            -o-transform: rotate(270deg);
+            -ms-transform: rotate(270deg);
+            transform: rotate(270deg);
+            margin-left: 37%;
+            cursor: pointer;
+        }
+
+        .activeShape {
+            -webkit-transform: rotate(270deg);
+            -moz-transform: rotate(270deg);
+            -o-transform: rotate(270deg);
+            -ms-transform: rotate(270deg);
+            transform: rotate(270deg);
+            margin-left: 37%;
+            border: 4px dotted rgb(146, 146, 199);
         }
     </style>
 
@@ -150,15 +172,16 @@
     <div id="design">
         <div class="options_r">
             <h2>Choose your shape:</h2>
-            <hr />
-            <img src="../media/pre_r_black.png" width="25%" style="margin-left: 175px;">
-            <br />
-            <img src="../media/pre_h_black.png" width="25%" style="margin-left: 175px;">
+            <hr>
+            <img id="corners_hard" src="../media/hard.jpg" width="25%" class="shape" onclick="hardCorners()">
+            <h3 style="margin-top: -30px;">hard corners</h3>
+            <img id="corners_round" src="../media/round.jpg" width="25%" class="shape" onclick="roundCorners()">
+            <h3 style="margin-top: -30px;">round corners</h3>
         </div>
 
         <div class="options_l">
             <h2>Choose your color:</h2>
-            <hr />
+            <hr>
 
             <div style="width: 50%; float: left;">
                 <div id="color_black" class="colors" style="background-color: black;" onclick="changeColor('000000')">
@@ -231,12 +254,12 @@
 
     <div id="performance" style="display: none">
         <div class="options_r" style="width:48%;">
-            <h1>Costumize everything else!</h1>
+            <h1>Costumize your phone's performance!</h1>
             <hr>
 
             <div class="optionsInside">
                 <h2>Storage Space</h2>
-                <div>
+                <div style="margin-left: 25%;">
                     <input name="ss" id="ss1" type="radio"> 64GB
                     <br>
                     <input name="ss" id="ss2" type="radio"> 128GB
@@ -245,102 +268,104 @@
                     <br>
                     <input name="ss" id="ss4" type="radio"> 512GB
                 </div>
-                <div class="optionsInside">
-                    <h2>Battery Size</h2>
-                    <div>
-                        <input name="bs" id="bs1" type="radio"> 2000mAh
-                        <br>
-                        <input name="bs" id="bs2" type="radio"> 2500mAh
-                        <br>
-                        <input name="bs" id="bs3" type="radio"> 3000mAh
-                        <br>
-                        <input name="bs" id="bs3" type="radio"> 3500mAh
-                    </div>
+            </div>
+            <div class="optionsInside">
+                <h2>Battery Size</h2>
+                <div style="margin-left: 25%;">
+                    <input name="bs" id="bs1" type="radio"> 2000mAh
+                    <br>
+                    <input name="bs" id="bs2" type="radio"> 2500mAh
+                    <br>
+                    <input name="bs" id="bs3" type="radio"> 3000mAh
+                    <br>
+                    <input name="bs" id="bs3" type="radio"> 3500mAh
                 </div>
-                <div class="optionsInside" style="margin-top: 35px;">
-                    <h2>RAM</h2>
-                    <div>
-                        <input name="ram" id="ram1" type="radio"> 2GB
-                        <br>
-                        <input name="ram" id="ram2" type="radio"> 4GB
-                        <br>
-                        <input name="ram" id="ram3" type="radio"> 6GB
-                        <br>
-                        <input name="ram" id="ram4" type="radio"> 8GB
-                    </div>
+            </div>
+            <div class="optionsInside" style="margin-top: 35px;">
+                <h2>RAM</h2>
+                <div style="margin-left: 25%;">
+                    <input name="ram" id="ram1" type="radio"> 2GB
+                    <br>
+                    <input name="ram" id="ram2" type="radio"> 4GB
+                    <br>
+                    <input name="ram" id="ram3" type="radio"> 6GB
+                    <br>
+                    <input name="ram" id="ram4" type="radio"> 8GB
                 </div>
-                <div class="optionsInside" style="margin-top: 35px;">
-                    <h2>CPU</h2>
-                    <div>
-                        <input name="cpu" id="cpu1" type="radio"> 2 x 1.4GHz
-                        <br>
-                        <input name="cpu" id="cpu2" type="radio"> 4 x 1.8GHz
-                        <br>
-                        <input name="cpu" id="cpu3" type="radio"> 4 x 2.8GHz
-                        <br>
-                        <input name="cpu" id="cpu4" type="radio"> 6 x 2.4GHz
-                    </div>
+            </div>
+            <div class="optionsInside" style="margin-top: 35px;">
+                <h2>CPU</h2>
+                <div style="margin-left: 25%;">
+                    <input name="cpu" id="cpu1" type="radio"> 2 x 1.4GHz
+                    <br>
+                    <input name="cpu" id="cpu2" type="radio"> 4 x 1.8GHz
+                    <br>
+                    <input name="cpu" id="cpu3" type="radio"> 4 x 2.8GHz
+                    <br>
+                    <input name="cpu" id="cpu4" type="radio"> 6 x 2.4GHz
                 </div>
             </div>
         </div>
+    </div>
+    </div>
 
 
-        <div id="extras" style="display: none;">
-            <div class="options_r" style="width:48%;">
-                <h1>Costumize everything else!</h1>
-                <hr>
-                <div class="optionsInside">
-                    <h2>Operating System</h2>
-                    <div>
-                        <input name="os" id="os1" type="radio"> Android
-                        <br>
-                        <input name="os" id="os2" type="radio"> iOS
-                        <br>
-                        <input name="os" id="os3" type="radio"> Windows Mobile
-                    </div>
+    <div id="extras" style="display: none;">
+        <div class="options_r" style="width:48%;">
+            <h1>Costumize everything else!</h1>
+            <hr>
+            <div class="optionsInside">
+                <h2>Operating System</h2>
+                <div>
+                    <input name="os" id="os1" type="radio"> Android
+                    <br>
+                    <input name="os" id="os2" type="radio"> iOS
+                    <br>
+                    <input name="os" id="os3" type="radio"> Windows Mobile
                 </div>
-                <div class="optionsInside">
-                    <h2>Charging Port</h2>
-                    <div>
-                        <input name="os" id="cp1" type="radio"> micro USB
-                        <br>
-                        <input name="os" id="cp2" type="radio"> USB-C
-                        <br>
-                        <input name="os" id="cp3" type="radio"> Lightning
-                    </div>
+            </div>
+            <div class="optionsInside">
+                <h2>Charging Port</h2>
+                <div>
+                    <input name="os" id="cp1" type="radio"> micro USB
+                    <br>
+                    <input name="os" id="cp2" type="radio"> USB-C
+                    <br>
+                    <input name="os" id="cp3" type="radio"> Lightning
                 </div>
-                <div class="optionsInside" style="margin-top: 35px;">
-                    <h2>Miscellaneous</h2>
-                    <div>
-                        <input name="misc" id="misc1" type="checkbox"> water resistant
-                        <br>
-                        <input name="misc" id="misc2" type="checkbox"> Headphone port
-                    </div>
+            </div>
+            <div class="optionsInside" style="margin-top: 35px;">
+                <h2>Miscellaneous</h2>
+                <div>
+                    <input name="misc" id="misc1" type="checkbox"> water resistant
+                    <br>
+                    <input name="misc" id="misc2" type="checkbox"> Headphone port
                 </div>
             </div>
         </div>
+    </div>
 
 
-        <!-- <img src="media/pre_h_red.png" style="width:27%"> -->
-        <canvas id="c"></canvas>
+    <!-- <img src="media/pre_h_red.png" style="width:27%"> -->
+    <canvas id="c"></canvas>
 
-        <!-- The main Three.js file -->
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js'></script>
+    <!-- The main Three.js file -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js'></script>
 
-        <!-- This brings in the ability to load custom 3D objects in the .gltf file format. Blender allows the ability to export to this format out the box -->
-        <script src='https://cdn.jsdelivr.net/gh/mrdoob/Three.js@r92/examples/js/loaders/GLTFLoader.js'></script>
+    <!-- This brings in the ability to load custom 3D objects in the .gltf file format. Blender allows the ability to export to this format out the box -->
+    <script src='https://cdn.jsdelivr.net/gh/mrdoob/Three.js@r92/examples/js/loaders/GLTFLoader.js'></script>
 
-        <!-- This is a simple to use extension for Three.js that activates all the rotating, dragging and zooming controls we need for both mouse and touch, there isn't a clear CDN for this that I can find -->
-        <script src='https://threejs.org/examples/js/controls/OrbitControls.js'></script>
+    <!-- This is a simple to use extension for Three.js that activates all the rotating, dragging and zooming controls we need for both mouse and touch, there isn't a clear CDN for this that I can find -->
+    <script src='https://threejs.org/examples/js/controls/OrbitControls.js'></script>
 
-        <!--   Load the JS-Script that is responsible for page navigation -->
-        <script src='navigation.js'></script>
+    <!--   Load the JS-Script that is responsible for page navigation -->
+    <script src='navigation.js'></script>
 
-        <!--   Load the JS-Script that is responsible for selections and saving configurations -->
-        <script src='selection.js'></script>
+    <!--   Load the JS-Script that is responsible for selections and saving configurations -->
+    <script src='selection.js'></script>
 
-        <!--   Load the JS-Script that loads and renders the 3d Preview -->
-        <script src='preview.js'></script>
+    <!--   Load the JS-Script that loads and renders the 3d Preview -->
+    <script src='preview.js'></script>
 
 
 </body>

@@ -2,7 +2,13 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phone Configurator - Presets</title>
+
+    <link rel="icon" type="image/png" href="media/favicon-32x32.png">
     <style>
         body {
             overflow-y: hidden;
@@ -14,11 +20,12 @@
 
         .row {
             display: flex;
+            margin-top: -30px;
         }
 
         .column {
             flex: 25.00%;
-            padding: 90px;
+            padding: 80px;
         }
 
         .card {
@@ -27,7 +34,6 @@
             min-width: 200px;
             margin: auto;
             text-align: center;
-            font-family: arial;
             cursor: pointer;
         }
 
@@ -62,11 +68,12 @@
 
     <h3 style="text-align:center">Smartphone Configurator</h3>
     <h1 style="text-align:center">Choose your starting point!</h1>
-    
+
 
     <div class="row">
         <div class="column">
-            <div class="card" id="card1" onclick="window.location='config/configurator.html?cam=55&color=aaaaaa&shape=1&perf=22&extras=110';">
+            <div class="card" id="card1"
+                onclick="window.location='config/configurator.html?cam=55&color=aaaaaa&shape=1&perf=22&extras=110';">
                 <div class="name">
                     <h1>Adventure</h1>
                 </div>
@@ -82,7 +89,8 @@
             </div>
         </div>
         <div class="column">
-            <div class="card" id="card2" onclick="window.location='config/configurator.html?cam=55&color=aaaaaa&shape=1&perf=22&extras=111';">
+            <div class="card" id="card2"
+                onclick="window.location='config/configurator.html?cam=55&color=aaaaaa&shape=1&perf=22&extras=111';">
                 <div class="name">
                     <h1>Photophone</h1>
                 </div>
@@ -98,7 +106,8 @@
             </div>
         </div>
         <div class="column">
-            <div class="card" id="card3" onclick="window.location='config/configurator.html?cam=55&color=aaaaaa&shape=1&perf=22&extras=111';">
+            <div class="card" id="card3"
+                onclick="window.location='config/configurator.html?cam=55&color=aaaaaa&shape=1&perf=22&extras=111';">
                 <div class="name">
                     <h1>Business</h1>
                 </div>
@@ -114,7 +123,8 @@
             </div>
         </div>
         <div class="column">
-            <div class="card" id="card4" onclick="window.location='config/configurator.html?cam=55&color=aa0000&shape=1&perf=22&extras=111';">
+            <div class="card" id="card4"
+                onclick="window.location='config/configurator.html?cam=55&color=aa0000&shape=1&perf=22&extras=111';">
                 <div class="name">
                     <h1>Gaming</h1>
                 </div>
@@ -122,7 +132,7 @@
                 <div class="description" id="des4">
                     <p>
                         <b>
-                           Powerful smartphone with long battery life for countless hours of gaming on-the-go.
+                            Powerful smartphone with long battery life for countless hours of gaming on-the-go.
                         </b>
                     </p>
                     <br>
@@ -131,5 +141,6 @@
         </div>
     </div>
 </body>
-<h4 style="text-align:center"> Project by Jonathan L&ouml;w, Paul M&uuml;ller &amp; Yannick Lang</h4>
+<h4 style="text-align:center;"> Project by Jonathan L&ouml;w, Paul M&uuml;ller &amp; Yannick Lang</h4>
+
 </html>

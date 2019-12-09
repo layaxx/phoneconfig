@@ -43,7 +43,6 @@ if (typeof extras == 'undefined' || parseInt(os, 10) > 3 || parseInt(cp, 10) > 3
 }
 if (typeof screen == 'undefined' || parseInt(screen, 10) > 4) {
     screen = '1';
-    error = true;
 }
 
 cam_back = Math.floor(cam / 10);

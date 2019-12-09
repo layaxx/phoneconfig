@@ -13,8 +13,8 @@ var frameCount = 0;
 var phone_r;
 var phone_h;
 
-const MODEL_PATH_R = "phone_r_model.glb";
-const MODEL_PATH_H = "phone_h_model.glb";
+const MODEL_PATH_R = "../media/models/phone_r_model.glb";
+const MODEL_PATH_H = "../medie/models/phone_h_model.glb";
 
 var r = true;
 

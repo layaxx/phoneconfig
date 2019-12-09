@@ -17,6 +17,7 @@ const MODEL_PATH_R = "../media/models/phone_r_model.glb";
 const MODEL_PATH_H = "../media/models/phone_h_model.glb";
 
 var r = true;
+var running = false;
 
 const BACKGROUND_COLOR = 0xf1f1f1;
 
@@ -40,13 +41,34 @@ renderer.setSize(WIDTH, HEIGHT, false);
 camera.aspect = WIDTH / HEIGHT;
 camera.updateProjectionMatrix();
 
+
+var vars = {};
+var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+    vars[key] = value;
+});
+
+
 const MTL_INITIAL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
 const MTL_CAM = new THREE.MeshPhongMaterial({ color: 0xE7E7E7, shininess: 10 });
 const MTL_FLASH = new THREE.MeshPhongMaterial({ color: 0x333333, shininess: 10 });
 const MTL_TOP = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
 var mtl_home = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
 const MTL_DISPLAY = new THREE.MeshPhongMaterial({ color: 0x1D1D1D, shininess: 10 });
-var mtl_body = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
+var mtl_body = new THREE.MeshPhongMaterial({ color: '#' + vars.color, shininess: 10 });
+
+if (vars.color == "000000") {
+    document.getElementById("color_black").className = "activeColor";
+    document.getElementById("color_black").innerHTML = "X";
+} else if (vars.color == "FFFFFF") {
+    document.getElementById("color_white").className = "activeColor";
+    document.getElementById("color_white").innerHTML = "X";
+} else if (vars.color == "FF0000") {
+    document.getElementById("color_red").className = "activeColor";
+    document.getElementById("color_red").innerHTML = "X";
+} else if (vars.color == "0000FF") {
+    document.getElementById("color_blue").className = "activeColor";
+    document.getElementById("color_blue").innerHTML = "X";
+}
 
 var mtl_map = [
     { childID: "button_top", mtl: MTL_TOP },
@@ -174,7 +196,7 @@ function animate() {
         frameCount = 1;
     }
     frameCount++;
-
+    running = true;
     requestAnimationFrame(animate);
 
 }

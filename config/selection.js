@@ -1,8 +1,3 @@
-var vars = {};
-var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
-    vars[key] = value;
-});
-
 
 var cam, design, performance, extras;
 
@@ -204,9 +199,14 @@ function setMaterial(parent, type, mtl) {
 }
 
 
-// Initial Selection Design: Throws error TODO
+// Initial Selection Design
 if (shape == 1) {
-    hardCorners();
+    document.getElementById("corners_hard").className = "activeShape";
+    document.getElementById("corners_round").className = "shape";
 } else {
-    roundCorners();
+    document.getElementById("corners_round").className = "activeShape";
+    document.getElementById("corners_hard").className = "shape";
+    r = true;
 }
+
+

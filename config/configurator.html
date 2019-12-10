@@ -166,17 +166,20 @@
 </head>
 
 <body>
+    <div style="width: 30%; position: absolute;">
+        <div style="margin-left: 40px; margin-top: 10px;">
+            <div class="buttons" style="margin-left:-10px;" onclick="location.href='../index.html'"> &#8592; PRESETS
+            </div>
+            <div class="buttons" onclick="exportURL()">&#8595; EXPORT</div>
+            <div class="buttons" onclick="importURL()">&#8593; IMPORT</div>
+        </div>
 
-    <div style="margin-left: 40px; margin-top: 10px; position: absolute;">
-        <div class="buttons" style="margin-left:-10px;" onclick="location.href='../index.html'"> &#8592; PRESETS</div>
-        <div class="buttons" onclick="exportURL()">&#8595; EXPORT</div>
-        <div class="buttons" onclick="importURL()">&#8593; IMPORT</div>
+        <div style="margin-left: 15%; margin-top: 145%;">
+            <div id="price" class="buttons" style="cursor:default"> PRICE</div>
+            <div class="buttons" onclick="addToCart()">&#8594; add to cart</div>
+        </div>
     </div>
 
-    <div style="margin-left: 140px; margin-top: 45%; position: absolute;">
-        <div id="price" class="buttons" style="cursor:default"> PRICE</div>
-        <div class="buttons" onclick="addToCart()">&#8594; add to cart</div>
-    </div>
 
     <div class="navbar">
         <a id="nav_design" class="active" href="#" onclick="goTo(1, true)">Design</a>

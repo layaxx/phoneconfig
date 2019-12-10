@@ -10,3 +10,6 @@ As an alternative to local hosting, the configurator can be accessed at http://s
 This website is a Prototype and does not (yet) scale well. It is optimized for 1920x1080 and may work worse than intended or not at all at 
 other, particularly smaller, resolutions or different aspect ratios, especially on mobile phones. 
 The website does not use cookies.
+
+
+Project by Paul Müller, Jonathan Löw and Yannick Lang

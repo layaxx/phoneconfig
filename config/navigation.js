@@ -48,11 +48,7 @@ function goTo(id, redirect) {
 }
 
 
-function back() {
-    if (confirm("You might loose your selections if you continue!")) {
-        location.href = '../index.html'
-    }
-}
+
 
 function importURL(){
     var input = prompt("Please enter your code", "");;

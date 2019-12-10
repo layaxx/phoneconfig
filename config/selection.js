@@ -173,9 +173,39 @@ var LightenColor = function (color, percent) {
 };
 
 function bugfix() {
-    document.getElementById("color_costum").value = '#444444';
+    var colorRGB = hexToRgb(color);
+    var relLuminance = relativeLuminanceW3C(colorRGB.r, colorRGB.g, colorRGB.b);
+    if (relLuminance > 0.98) {
+        document.getElementById("color_costum").value = '#bbbbbb';
+    } else if (relLuminance < 0.02) {
+        document.getElementById("color_costum").value = '#333333';
+    }
 }
 
+function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+
+function relativeLuminanceW3C(R8bit, G8bit, B8bit) {
+
+    var RsRGB = R8bit / 255;
+    var GsRGB = G8bit / 255;
+    var BsRGB = B8bit / 255;
+
+    var R = (RsRGB <= 0.03928) ? RsRGB / 12.92 : Math.pow((RsRGB + 0.055) / 1.055, 2.4);
+    var G = (GsRGB <= 0.03928) ? GsRGB / 12.92 : Math.pow((GsRGB + 0.055) / 1.055, 2.4);
+    var B = (BsRGB <= 0.03928) ? BsRGB / 12.92 : Math.pow((BsRGB + 0.055) / 1.055, 2.4);
+
+    // For the sRGB colorspace, the relative luminance of a color is defined as: 
+    var L = 0.2126 * R + 0.7152 * G + 0.0722 * B;
+
+    return L;
+}
 
 function changeColorCostum() {
     var newColor = document.getElementById("color_costum").value;

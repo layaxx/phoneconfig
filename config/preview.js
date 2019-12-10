@@ -73,6 +73,7 @@ const MTL_FLASH = new THREE.MeshPhongMaterial({ color: 0x333333, shininess: 10 }
 const MTL_TOP = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
 var mtl_home = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
 const MTL_DISPLAY = new THREE.MeshPhongMaterial({ color: 0x1D1D1D, shininess: 10 });
+const MTL_BACK = new THREE.MeshPhongMaterial({ color: 0x222222, shininess: 10 });
 var mtl_body = new THREE.MeshPhongMaterial({ color: '#' + vars.color, shininess: 10 });
 
 if (vars.color == "000000") {
@@ -102,6 +103,7 @@ var mtl_map = [
     { childID: "cam", mtl: MTL_CAM },
     { childID: "flash", mtl: MTL_FLASH },
     { childID: "display", mtl: MTL_DISPLAY },
+    { childID: "cam_back", mtl: MTL_BACK },
 ];
 
 // Init the object loader

@@ -401,11 +401,11 @@ function setPerf(number, id) {
 
 function setOptions(number) {
     if (number == 1) {
-        if (document.getElementById("powerbanks").className == "acc") {
-            document.getElementById("powerbanks").className = "activeAcc";
+        if (document.getElementById("powerbank").className == "acc") {
+            document.getElementById("powerbank").className = "activeAcc";
             price += 25;
         } else {
-            document.getElementById("powerbanks").className = "acc";
+            document.getElementById("powerbank").className = "acc";
             price -= 25;
         }
     } else if (number == 2) {
@@ -425,7 +425,7 @@ function setOptions(number) {
             price -= 15;
         }
     }
-    document.getElementById("finalPrice").innerHTML = "Your phone costs " + price + "€.";
+    document.getElementById("finalPrice").innerHTML = "Your total is " + price + "€.";
 }
 
 function generateUrlVars(s) {

@@ -87,10 +87,6 @@
             text-align: center;
         }
 
-        h4 {
-            text-align: center;
-        }
-
 
         .navbar {
             width: 70%;
@@ -167,7 +163,7 @@
 
     <div style="margin-left: 140px; margin-top: 45%; position: absolute;">
         <div id="price" class="buttons" style="cursor:default"> PRICE</div>
-        <div class="buttons" onclick="addToCart()">&#8594; add to cart</div>
+        <div class="buttons">&#8594; add to cart</div>
     </div>
 
     <div class="navbar">
@@ -175,7 +171,7 @@
         <a id="nav_cam" href="#" onclick="goTo(2, true)">Camera</a>
         <a id="nav_performance" href="#" onclick="goTo(3, true)">Performance</a>
         <a id="nav_extras" href="#" onclick="goTo(4, true)">Extras</a>
-        <a id="nav_cart" href="#" style="float:right;" onclick="goTo(5, true)">Cart</a>
+        <a href="#" style="float:right">Cart</a>
     </div>
 
     <div id="design">
@@ -220,8 +216,7 @@
             </div>
             <div>
                 <input type="color" id="color_costum" value="#e66465"
-                    style="margin-left: 40%; width: 80px; height: 80px;" onclick="bugfix()"
-                    onchange="changeColorCostum()" style="cursor:pointer;">
+                    style="margin-left: 40%; width: 80px; height: 80px;" onclick="bugfix()" onchange="changeColorCostum()" style="cursor:pointer;">
                 <div class="colors_name">
                     <h2>Costum Color</h2>
                 </div>
@@ -368,37 +363,6 @@
                     <br>
                     <input name="misc" id="misc2" type="checkbox" onclick="setExtras(2, 'misc')"> Headphone port [+10€]
                 </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div id="cart" style="display: none;">
-        <div class="options_r" style="width:48%;">
-            <h1 id="messageCart">Please add your phone to cart first.</h1>
-            <hr>
-            <h1 id="finalPrice">Please add your phone to cart first.</h1>
-            <h2>Add some accessories:</h2>
-            <div class="optionsInside" style="width: 33%;">
-                <h4>Powerbank</h2>
-                    <div>
-
-                    </div>
-            </div>
-            <div class="optionsInside" style="width: 33%;">
-                <h4>Headphone</h2>
-                    <div>
-
-                    </div>
-            </div>
-            <div class="optionsInside" style="width: 33%;">
-                <h4>Protective Case</h2>
-                    <div>
-
-                    </div>
-            </div>
-            <div style="text-align: center;">
-                &#8594; Checkout
             </div>
         </div>
     </div>

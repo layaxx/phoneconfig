@@ -62,10 +62,10 @@ if (vars.color == "000000") {
 } else if (vars.color == "FFFFFF") {
     document.getElementById("color_white").className = "activeColor";
     document.getElementById("color_white").innerHTML = "X";
-} else if (vars.color == "FF0000") {
+} else if (vars.color == "fa5543") {
     document.getElementById("color_red").className = "activeColor";
     document.getElementById("color_red").innerHTML = "X";
-} else if (vars.color == "0000FF") {
+} else if (vars.color == "2E86C1") {
     document.getElementById("color_blue").className = "activeColor";
     document.getElementById("color_blue").innerHTML = "X";
 } else {

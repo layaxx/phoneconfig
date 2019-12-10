@@ -246,10 +246,10 @@ function changeColor(newColor) {
     } else if (newColor == "FFFFFF") {
         document.getElementById("color_white").className = "activeColor";
         document.getElementById("color_white").innerHTML = "X";
-    } else if (newColor == "FF0000") {
+    } else if (newColor == "fa5543") {
         document.getElementById("color_red").className = "activeColor";
         document.getElementById("color_red").innerHTML = "X";
-    } else if (newColor == "0000FF") {
+    } else if (newColor == "2E86C1") {
         document.getElementById("color_blue").className = "activeColor";
         document.getElementById("color_blue").innerHTML = "X";
     } else {

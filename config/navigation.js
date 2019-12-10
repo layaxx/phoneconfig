@@ -77,7 +77,7 @@ function goTo(id, redirect) {
 }
 
 
-function addToCart(){
+function addToCart() {
     addedToCart = true;
     goTo(5, true);
 }

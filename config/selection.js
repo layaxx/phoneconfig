@@ -399,6 +399,35 @@ function setPerf(number, id) {
 }
 
 
+function setOptions(number) {
+    if (number == 1) {
+        if (document.getElementById("powerbanks").className == "acc") {
+            document.getElementById("powerbanks").className = "activeAcc";
+            price += 25;
+        } else {
+            document.getElementById("powerbanks").className = "acc";
+            price -= 25;
+        }
+    } else if (number == 2) {
+        if (document.getElementById("headphones").className == "acc") {
+            document.getElementById("headphones").className = "activeAcc";
+            price += 45;
+        } else {
+            document.getElementById("headphones").className = "acc";
+            price -= 45;
+        }
+    } else if (number == 3) {
+        if (document.getElementById("case").className == "acc") {
+            document.getElementById("case").className = "activeAcc";
+            price += 15;
+        } else {
+            document.getElementById("case").className = "acc";
+            price -= 15;
+        }
+    }
+    document.getElementById("finalPrice").innerHTML = "Your phone costs " + price + "€.";
+}
+
 function generateUrlVars(s) {
     var output = 'cam='
     output = output + cam_back + cam_front;

@@ -153,6 +153,14 @@
             margin-left: 37%;
             border: 4px dotted rgb(146, 146, 199);
         }
+
+        .activeAcc {
+            border: 4px dotted rgb(146, 146, 199);
+        }
+
+        .acc {
+            border: none;
+        }
     </style>
 
 </head>
@@ -380,24 +388,25 @@
             <h1 id="finalPrice">Please add your phone to cart first.</h1>
             <h2>Add some accessories:</h2>
             <div class="optionsInside" style="width: 33%;">
-                <h4>Powerbank</h2>
-                    <div>
-
+                <h4>Powerbank [+25€]</h2>
+                    <div id="powerbank" class="acc">
+                        <img src="../media/powerbank.jpg" width="70%" style="margin-left: 20px;"
+                            onclick="setOptions(1)">
                     </div>
             </div>
             <div class="optionsInside" style="width: 33%;">
-                <h4>Headphone</h2>
-                    <div>
-
+                <h4>Headphones [+45€]</h2>
+                    <div id="headphones" class="acc">
+                        <img src="../media/earbuds.jpg" width="70%" style="margin-left: 20px;" onclick="setOptions(2)">
                     </div>
             </div>
-            <div class="optionsInside" style="width: 33%;">
-                <h4>Protective Case</h2>
-                    <div>
-
+            <div class="optionsInside" style="width: 33%;" onclick="setOptions(3)">
+                <h4>Protective Case [+15€]</h2>
+                    <div id="case" class="acc">
+                        <img src="../media/case.jpg" width="70%" style="margin-left: 20px;">
                     </div>
             </div>
-            <div style="text-align: center;">
+            <div style="text-align: center; cursor: pointer;" onclick="alert('not yet implemented')">
                 &#8594; Checkout
             </div>
         </div>

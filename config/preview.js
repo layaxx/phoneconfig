@@ -32,6 +32,25 @@ var cameraFar = 5;
 document.body.appendChild(renderer.domElement);
 
 
+var LightenColor = function (color, percent) {
+    var num = parseInt(color, 16),
+        amt = Math.round(2.55 * percent),
+        R = (num >> 16) + amt,
+        B = (num >> 8 & 0x00FF) + amt,
+        G = (num & 0x0000FF) + amt;
+
+    return (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 + (B < 255 ? B < 1 ? 0 : B : 255) * 0x100 + (G < 255 ? G < 1 ? 0 : G : 255)).toString(16).slice(1);
+};
+
+function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+
 // Add a camera
 var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.z = cameraFar;
@@ -72,6 +91,9 @@ if (vars.color == "000000") {
     document.getElementById("color_costum").className = "activeColor";
 }
 document.getElementById("color_costum").value = '#' + vars.color;
+
+var lighterColor = LightenColor(vars.color, 7);
+mtl_home = new THREE.MeshPhongMaterial({ color: parseInt('0x' + lighterColor), shininess: 10 });
 
 var mtl_map = [
     { childID: "button_top", mtl: MTL_TOP },

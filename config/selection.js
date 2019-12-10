@@ -1,5 +1,6 @@
 
 var cam, shape, color, performance, extras, screen;
+var price = 300;
 
 
 cam = vars.cam;
@@ -67,12 +68,16 @@ if (cam_back == 0) {
     document.getElementById("cam_0_l").checked = true;
 } else if (cam_back == 1) {
     document.getElementById("cam_1_l").checked = true;
+    price += 30;
 } else if (cam_back == 2) {
     document.getElementById("cam_2_l").checked = true;
+    price += 60;
 } else if (cam_back == 3) {
     document.getElementById("cam_3_l").checked = true;
+    price += 90;
 } else if (cam_back == 4) {
     document.getElementById("cam_4_l").checked = true;
+    price += 120;
 }
 
 
@@ -80,12 +85,16 @@ if (cam_front == 0) {
     document.getElementById("cam_0_r").checked = true;
 } else if (cam_front == 1) {
     document.getElementById("cam_1_r").checked = true;
+    price += 30;
 } else if (cam_front == 2) {
     document.getElementById("cam_2_r").checked = true;
+    price += 60;
 } else if (cam_front == 3) {
     document.getElementById("cam_3_r").checked = true;
+    price += 90;
 } else if (cam_front == 4) {
     document.getElementById("cam_4_r").checked = true;
+    price += 120;
 }
 
 
@@ -94,40 +103,52 @@ if (ss == 1) {
     document.getElementById("ss1").checked = true;
 } else if (ss == 2) {
     document.getElementById("ss2").checked = true;
+    price += 40;
 } else if (ss == 3) {
     document.getElementById("ss3").checked = true;
+    price += 80;
 } else if (ss == 4) {
     document.getElementById("ss4").checked = true;
+    price += 120;
 }
 
 if (bs == 1) {
     document.getElementById("bs1").checked = true;
 } else if (bs == 2) {
     document.getElementById("bs2").checked = true;
+    price += 30;
 } else if (bs == 3) {
     document.getElementById("bs3").checked = true;
+    price += 60;
 } else if (bs == 4) {
     document.getElementById("bs4").checked = true;
+    price += 90;
 }
 
 if (ram == 1) {
     document.getElementById("ram1").checked = true;
 } else if (ram == 2) {
     document.getElementById("ram2").checked = true;
+    price += 30;
 } else if (ram == 3) {
     document.getElementById("ram3").checked = true;
+    price += 60;
 } else if (ram == 4) {
     document.getElementById("ram4").checked = true;
+    price += 90;
 }
 
 if (cpu == 1) {
     document.getElementById("cpu1").checked = true;
 } else if (cpu == 2) {
     document.getElementById("cpu2").checked = true;
+    price += 30;
 } else if (cpu == 3) {
     document.getElementById("cpu3").checked = true;
+    price += 60;
 } else if (cpu == 4) {
     document.getElementById("cpu4").checked = true;
+    price += 90;
 }
 
 
@@ -136,6 +157,7 @@ if (os == 1) {
     document.getElementById("os1").checked = true;
 } else if (os == 2) {
     document.getElementById("os2").checked = true;
+    price += 40;
 } else if (os == 3) {
     document.getElementById("os3").checked = true;
 }
@@ -146,31 +168,29 @@ if (cp == 1) {
     document.getElementById("cp2").checked = true;
 } else if (cp == 3) {
     document.getElementById("cp3").checked = true;
+    price += 20;
 }
 
 if (misc == 1) {
     document.getElementById("misc1").checked = true;
+    price += 50;
 } else if (misc == 2) {
     document.getElementById("misc2").checked = true;
+    price += 10;
 } else if (misc == 3) {
     document.getElementById("misc1").checked = true;
     document.getElementById("misc2").checked = true;
+    price += 60;
 }
 
+
+setPrice();
 
 // Initialise Screen
 
 goTo(screen, false);
 
-var LightenColor = function (color, percent) {
-    var num = parseInt(color, 16),
-        amt = Math.round(2.55 * percent),
-        R = (num >> 16) + amt,
-        B = (num >> 8 & 0x00FF) + amt,
-        G = (num & 0x0000FF) + amt;
 
-    return (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 + (B < 255 ? B < 1 ? 0 : B : 255) * 0x100 + (G < 255 ? G < 1 ? 0 : G : 255)).toString(16).slice(1);
-};
 
 function bugfix() {
     var colorRGB = hexToRgb(color);
@@ -182,14 +202,7 @@ function bugfix() {
     }
 }
 
-function hexToRgb(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
-    } : null;
-}
+
 
 function relativeLuminanceW3C(R8bit, G8bit, B8bit) {
 
@@ -305,49 +318,84 @@ if (shape == 1) {
 
 function setCam(number, side) {
     if (side == 'r') {
+        price -= cam_front * 30;
         cam_front = number;
+        price += number * 30;
     } else if (side == 'l') {
+        price -= cam_back * 30;
         cam_back = number;
+        price += number * 30;
     }
+    setPrice();
 }
 
 function setExtras(number, id) {
     if (id == 'os') {
+        if (os == 2 && number != 2) {
+            price -= 40;
+        } else if (os != 2 && number == 2) {
+            price += 40;
+        }
+
         os = number;
+
     } else if (id == 'cp') {
+        if (cp == 3 && number != 3) {
+            price -= 20;
+        } else if (cp != 3 && number == 3) {
+            price += 20;
+        }
         cp = number;
     }
     else if (id == 'misc') {
         if (misc == 1 && number == 1) {
             misc = 0;
+            price -= 50;
         } else if (misc == 2 && number == 1) {
             misc = 3;
+            price += 50;
         } else if (misc == 3 && number == 1) {
             misc = 2;
+            price -= 50;
         } else if (misc == 1 && number == 2) {
             misc = 3;
+            price += 10;
         } else if (misc == 2 && number == 2) {
             misc = 0;
+            price -= 10;
         } else if (misc == 3 && number == 2) {
             misc = 2;
+            price -= 10;
         } else if (misc == 0 && number == 2) {
             misc = 2;
+            price += 10;
         } else if (misc == 0 && number == 1) {
             misc = 1;
+            price += 50;
         }
     }
+    setPrice();
 }
 
 function setPerf(number, id) {
     if (id == 'ss') {
+        price -= ss * 40;
         ss = number;
+        price += number * 40;
     } else if (id == 'bs') {
-        id = number;
+        price -= bs * 30;
+        bs = number;
+        price += number * 30;
     } else if (id == 'ram') {
+        price -= ram * 30;
         ram = number;
+        price += number * 30;
     } else if (id == 'cpu') {
+        price -= cpu * 30;
         cpu = number;
+        price += number * 30;
     }
+    setPrice();
 }
 
 
@@ -362,4 +410,9 @@ function generateUrlVars(s) {
         output = output + '&screen=' + screen;
     }
     return output;
+}
+
+
+function setPrice() {
+    document.getElementById("price").innerHTML = price + "€";
 }

@@ -3,7 +3,7 @@ mid-fi mockup for IS-B
 
 
 Instructions:
-Open index.html to start configuration process.
+Open index.html to start your configuration process.
 Relies on Javascript to work, which may not be loaded properly if index.html is simply opened from explorer without hosting.
 As an alternative to local hosting, the configurator can be accessed at https://layaxx.github.io/phoneconfig/ or at http://smartphone.rf.gd/
 

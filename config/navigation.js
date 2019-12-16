@@ -65,10 +65,8 @@ function goTo(id, redirect) {
         if (addedToCart) {
             document.getElementById("finalPrice").innerHTML = "Your phone costs " + price + "€.";
             document.getElementById("messageCart").innerHTML = "Your personalized Phone was added to your cart!";
-            document.getElementById("nav_cart").style.cursor = "pointer";
             document.getElementById("checkout").style.background = "#4CAF50";
             document.getElementById("checkout").style.cursor = "pointer";
-            document.getElementById("nav_cart").onclick = function () { goTo(5, true) };
         }
     }
     if (redirect && generateUrlVars(false) != oldVars) {
@@ -81,7 +79,7 @@ function goTo(id, redirect) {
 
 function addToCart() {
     addedToCart = true;
-    goTo(5, true);
+    goTo(5, false);
 }
 
 function importURL() {

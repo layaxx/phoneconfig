@@ -86,8 +86,12 @@ function addToCart() {
 
 function importURL() {
     var input = prompt("Please enter your code", "");;
-    var address = 'configurator.html?' + input;
-    location.href = address;
+    if (input.length > 47) {
+        var address = 'configurator.html?' + input;
+        location.href = address;
+    } else {
+        alert("Not a valid input");
+    }
 }
 
 

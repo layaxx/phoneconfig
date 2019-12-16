@@ -25,7 +25,7 @@
         .options_l {
             width: 24%;
             height: 510px;
-            background-color: #dddde0;
+            background-color: #f1f1f1;
             overflow: auto;
             float: right;
             margin-right: 1%;
@@ -35,7 +35,7 @@
         .options_r {
             width: 24%;
             height: 510px;
-            background-color: #dddde0;
+            background-color: #f1f1f1;
             overflow: auto;
             float: right;
             margin-right: 13%;
@@ -69,7 +69,7 @@
             margin-top: 60px;
             width: 80px;
             height: 80px;
-            border: 4px dotted rgb(146, 146, 199);
+            outline: 5px dotted #4CAF50;
             text-align: center;
             font-size: 50pt;
             color: white;
@@ -132,6 +132,11 @@
             background: #555;
             color: white;
             cursor: pointer;
+            box-shadow: 3px 2px 2px rgb(168, 168, 168);
+        }
+
+        .buttons:hover {
+            box-shadow: 5px 3px 3px #4CAF50;
         }
 
         .shape {
@@ -151,15 +156,15 @@
             -ms-transform: rotate(270deg);
             transform: rotate(270deg);
             margin-left: 37%;
-            border: 4px dotted rgb(146, 146, 199);
+            outline: 5px dotted #4CAF50;
         }
 
         .activeAcc {
-            border: 4px dotted rgb(146, 146, 199);
+            outline: 4px dotted #4CAF50;
         }
 
         .acc {
-            border: none;
+            outline: none;
         }
     </style>
 
@@ -176,7 +181,7 @@
     </div>
     <div style="width: 30%; position: absolute; margin-top: 45%;">
         <div style="margin-left: 15%;">
-            <div id="price" class="buttons" style="cursor:default"> PRICE</div>
+            <div id="price" class="buttons" style="box-shadow: none; cursor:default"> PRICE</div>
             <div class="buttons" onclick="addToCart()">&#8594; add to cart</div>
         </div>
     </div>
@@ -412,7 +417,9 @@
                             onclick="setOptions(3)">
                     </div>
             </div>
-            <div id="checkout" style="text-align: center; cursor: not-allowed; margin-top: 30%; background: #444; padding: 10px;" onclick="alert('not yet implemented')">
+            <div id="checkout"
+                style="text-align: center; cursor: not-allowed; margin-top: 30%; background: #444; padding: 10px;"
+                onclick="alert('not yet implemented')">
                 <b>&#8594; Checkout </b>
             </div>
         </div>

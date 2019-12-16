@@ -42,7 +42,7 @@ if (typeof extras == 'undefined' || parseInt(os, 10) > 3 || parseInt(cp, 10) > 3
     extras = '110';
     error = true;
 }
-if (typeof screen == 'undefined' || parseInt(screen, 10) > 4) {
+if (typeof screen == 'undefined' || parseInt(screen, 10) > 5) {
     screen = '1';
 }
 

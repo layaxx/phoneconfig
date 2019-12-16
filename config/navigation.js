@@ -66,6 +66,8 @@ function goTo(id, redirect) {
             document.getElementById("finalPrice").innerHTML = "Your phone costs " + price + "€.";
             document.getElementById("messageCart").innerHTML = "Your personalized Phone was added to your cart!";
             document.getElementById("nav_cart").style.cursor = "pointer";
+            document.getElementById("checkout").style.background = "#4CAF50";
+            document.getElementById("checkout").style.cursor = "pointer";
             document.getElementById("nav_cart").onclick = function () { goTo(5, true) };
         }
     }
